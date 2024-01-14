@@ -1,0 +1,27 @@
+[09-Jan-2024 16:12:15 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.16. in /home/mohamedf/test/vendor/composer/platform_check.php on line 24
+[09-Jan-2024 16:13:10 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.16. in /home/mohamedf/test/vendor/composer/platform_check.php on line 24
+[09-Jan-2024 16:13:11 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.16. in /home/mohamedf/test/vendor/composer/platform_check.php on line 24
+[09-Jan-2024 16:13:15 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.16. in /home/mohamedf/test/vendor/composer/platform_check.php on line 24
+[11-Jan-2024 16:54:28 UTC] PHP Fatal error:  Cannot use Illuminate\Bus\Queueable as Queueable because the name is already in use in /home/mohamedf/test/app/Jobs/SendPurchaseMail.php on line 15
+[12-Jan-2024 19:33:17 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to mohamed@admin.com.  The account
+550-or domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 19:45:24 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to moh@admiiiin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 19:46:00 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to moh@admiiiin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 20:19:42 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to admin@admin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 20:20:04 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to admin@admin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 20:20:35 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to admin@admin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[12-Jan-2024 21:29:25 UTC] Expected response code "250/251/252" but got code "550", with message "550-The mail server could not deliver mail to admin@admin.com.  The account or
+550-domain may not exist, they may be blacklisted, or missing the proper dns
+550 entries.".
+[13-Jan-2024 18:39:28 UTC] Unable to connect with STARTTLS: stream_socket_enable_crypto(): Peer certificate CN=`server104.orangehost.com' did not match expected CN=`smtp.hostinger.com'
