@@ -62,7 +62,7 @@ class ClickpayController extends Controller
             "cart_description"=> $plan->name,
             "cart_currency"=> "SAR",
             "cart_amount"=> $plan->price,
-            "return"=> "https://test.mohamedfathy90.com/dashboard/user/payment/clickpay/prepaid/callback",
+            "return"=> route('dashboard.user.payment.clickpay.prepaid.callback'),
             "customer_details"=> [
                 "name"=> '',
                 "email"=> $user->email,
@@ -154,7 +154,7 @@ class ClickpayController extends Controller
             "tokenise"=> "2",
             "cart_currency"=> "SAR",
             "cart_amount"=> $plan->price,
-            "return"=> "https://test.mohamedfathy90.com/dashboard/user/payment/clickpay/subscribe/callback",
+            "return"=> route('dashboard.user.payment.clickpay.subscribe.callback'),
             "customer_details"=> [
                 "name"=> '',
                 "email"=> $user->email,
