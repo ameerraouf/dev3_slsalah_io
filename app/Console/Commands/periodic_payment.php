@@ -75,10 +75,9 @@ class periodic_payment extends Command
             "tran_ref"=> $activeSub->trans_ref,
             "cart_currency"=> "SAR",
             "cart_amount"=> $activeSub->price,
-            "callback"=> "https://test.mohamedfathy90.com/api/dashboard/user/payment/clickpay/subscribe/recurring/callback/".$activeSub->id,
+            "callback"=> "https://dev2-slsalah-io.slsalah.tech/api/dashboard/user/payment/clickpay/subscribe/recurring/callback/".$activeSub->id,
         ]);
       
-       
             }
         }
     }
