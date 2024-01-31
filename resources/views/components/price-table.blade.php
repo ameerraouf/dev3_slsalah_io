@@ -42,7 +42,7 @@
 				</li>
 			@endforeach
 		@endif
-		<li class="mb-[0.625em]">
+		<li class="flex items-center mb-4">
 			<span class="inline-grid place-content-center w-[22px] h-[22px] mr-3 rounded-xl text-[#684AE2] bg-[#684AE2] bg-opacity-10 shrink-0">
 				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
 			</span>
@@ -52,7 +52,7 @@
 			<strong>{{__('Unlimited')}}</strong> {{__('Word Tokens')}}
 			@endif
 		</li>
-		<li class="mb-[0.625em]">
+		<li class="flex items-center mb-4">
 			<span class="inline-grid place-content-center w-[22px] h-[22px] mr-3 rounded-xl text-[#684AE2] bg-[#684AE2] bg-opacity-10 shrink-0">
 				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
 			</span>

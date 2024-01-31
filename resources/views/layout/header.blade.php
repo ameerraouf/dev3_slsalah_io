@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<div class="flex justify-end gap-2 basis-1/3 max-lg:basis-2/3">
-			@if(count( explode(',', $settings_two->languages) ) > 1)
+			{{-- @if(count( explode(',', $settings_two->languages) ) > 1)
 			<div class="hidden md:block relative group">
 				<button class="inline-flex items-center justify-center w-10 h-10 border-2 border-solid border-white !border-opacity-20 rounded-full transition-colors group-hover:bg-white group-hover:!border-opacity-100 group-hover:text-black group-[.lqd-is-sticky]/header:border-black group-[.lqd-is-sticky]/header:group-hover:bg-black group-[.lqd-is-sticky]/header:group-hover:text-white before:absolute before:w-full before:h-4 before:top-full before:end-0">
 					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -77,7 +77,7 @@
                     @endforeach
 				</div>
 			</div>
-			@endif
+			@endif --}}
 
 			@auth
 				<div class="mx-3">

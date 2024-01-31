@@ -10,7 +10,7 @@
 
         @if(isset($post->feature_image) && !empty($post->feature_image) )
             <div class="feature-image mb-10 mx-auto">
-                <img class="w-full rounded-3xl" src="/{{$post->feature_image}}" alt="{{$post->title}}">
+                <img class="w-full md:w-6/12 mx-auto h-auto rounded-3xl" src="/{{$post->feature_image}}" alt="{{$post->title}}">
             </div>
         @endif
         <div class="content lg:w-9/12 w-full mx-auto">

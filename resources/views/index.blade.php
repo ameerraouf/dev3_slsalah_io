@@ -10,13 +10,13 @@
 	</div>
 	<div class="container relative">
 		<div class="max-lg:w-2/3 max-md:w-full flex flex-col items-center w-1/2 mx-auto">
-			<h6 class=" rounded-2xl px-3 py-1 mb-8 bg-white bg-opacity-15 text-white relative overflow-hidden transition-all ease-out opacity-0 translate-y-6 blur-lg group-[.page-loaded]/body:opacity-100 group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:blur-0">
+			<h6 class=" rounded-2xl bg-black bg-opacity-25 px-3 py-1 mb-8 text-white relative overflow-hidden transition-all ease-out opacity-0 translate-y-6 blur-lg group-[.page-loaded]/body:opacity-100 group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:blur-0">
 				<div class="banner-subtitle-gradient absolute -inset-3 blur-3xl transition-all duration-500 group-[.page-loaded]/body:opacity-0">
 					<div class="absolute inset-0 bg-gradient-to-br from-violet-600 to-red-500 animate-hue-rotate"></div>
 				</div>
 				<span class="relative">{!! __($setting->site_name) !!}</span>
 				<span class="dot relative"></span>
-				<span class="opacity-60 relative">{!! __($fSetting->hero_subtitle) !!}</span>
+				<span class="relative">{!! __($fSetting->hero_subtitle) !!}</span>
 			</h6>
 			<div class="banner-title-wrap relative">
 				<h1
@@ -45,7 +45,7 @@
 			</div>
 			<p
 				class="
-				mb-7 max-sm:w-full w-3/4 text-[20px] leading-[1.25em] text-fuchsia-700 opacity-75
+				mb-7 max-sm:w-full w-3/4 text-[20px] leading-[1.25em] text-fuchsia-700 
 				[&_.lqd-split-text-words]:transition-all [&_.lqd-split-text-words]:ease-out [&_.lqd-split-text-words]:opacity-0 [&_.lqd-split-text-words]:translate-y-3
 				group-[.page-loaded]/body:[&_.lqd-split-text-words]:opacity-100 group-[.page-loaded]/body:[&_.lqd-split-text-words]:translate-y-0 group-[.page-loaded]/body:[&_.lqd-split-text-words]:text-white">
 				<x-split-words text="{!! __($fSetting->hero_description) !!}" transitionDelayStart="{{0.15}}" transitionDelayStep="{{0.02}}" />
@@ -72,7 +72,9 @@
 			</div>
 			<br>
 			<div class="transition-all delay-[500ms] opacity-0 translate-y-3 group-[.page-loaded]/body:opacity-100 group-[.page-loaded]/body:translate-y-0">
-				<a href="#features" class="hover:opacity-100 transition-opacity opacity-50">{!! __($fSetting->hero_scroll_text) !!}</a>
+				<a href="#features" class="hover:opacity-50 flex align-center gap-1 transition-opacity ">
+					{!! __($fSetting->hero_scroll_text) !!}
+				</a>
 			</div>
 		</div>
 	</div>
@@ -455,10 +457,10 @@
 				title="{!! __($fSectSettings->faq_title) !!}"
 				subtitle="{!! __($fSectSettings->faq_subtitle) !!}"
 			>
-				<h6 class="inline-block py-1 px-3 mb-6 rounded-md text-[13px] font-medium text-[#60027C] bg-[#60027C] bg-opacity-15">
-					{!! __($fSectSettings->faq_text_one) !!}
+				<h6 class="inline-block py-1 px-3 mb-6 rounded-md text-[13px] font-medium text-[#efc13a] bg-[#fbf5e0]">
+					<b>{!! __($fSectSettings->faq_text_one) !!}</b>
 					<span class="dot"></span>
-					<span class="opacity-50">{!! __($fSectSettings->faq_text_two) !!}</span>
+					<span class="">{!! __($fSectSettings->faq_text_two) !!}</span>
 				</h6>
 			</x-section-header>
 			<div class="lqd-accordion max-lg:w-full w-5/6 mx-auto">
@@ -495,15 +497,13 @@
 			</div>
 			<div class="flex justify-center">
 				<a class="flex space-x-2 group" href="/blog">
-					<div class="bg-green-100 text-green-500 group-hover:bg-green-200 text-sm font-semibold py-1 px-2 rounded-md transition-colors">
+					<div class="bg-green-100 flex gap-3 align-center text-green-500 group-hover:bg-green-200 text-sm font-semibold py-1 px-2 rounded-md transition-colors">
+						{{__($fSectSettings->blog_button_text)}}
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
 							<path d="M12 5l0 14"></path>
 							<path d="M5 12l14 0"></path>
 						</svg>
-					</div>
-					<div class="bg-green-100 text-green-500 group-hover:bg-green-200 text-sm font-semibold py-1 px-2 rounded-md transition-colors">
-						{{__($fSectSettings->blog_button_text)}}
 					</div>
 				</a>
 			</div>
