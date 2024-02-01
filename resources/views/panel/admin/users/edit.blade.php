@@ -94,13 +94,13 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Remaining Words')}}</label>
-											<input type="number" name="remaining_words" id="remaining_words" class="form-control"  value="{{$user->remaining_words}}"/>
+											<input type="number" min="0" name="remaining_words" id="remaining_words" class="form-control"  value="{{$user->remaining_words}}"/>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Remaining Images')}}</label>
-											<input type="number" name="remaining_images" id="remaining_images" class="form-control"  value="{{$user->remaining_images}}"/>
+											<input type="number" min="0" name="remaining_images" id="remaining_images" class="form-control"  value="{{$user->remaining_images}}"/>
 										</div>
 									</div>
 								</div>

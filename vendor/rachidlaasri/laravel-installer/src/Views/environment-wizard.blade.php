@@ -171,7 +171,7 @@
                     <label for="database_port">
                         {{ trans('installer_messages.environment.wizard.form.db_port_label') }}
                     </label>
-                    <input type="number" name="database_port" id="database_port" value="3306" placeholder="{{ trans('installer_messages.environment.wizard.form.db_port_placeholder') }}" />
+                    <input type="number" min="0" name="database_port" id="database_port" value="3306" placeholder="{{ trans('installer_messages.environment.wizard.form.db_port_placeholder') }}" />
                     @if ($errors->has('database_port'))
                         <span class="error-block">
                             <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -355,7 +355,7 @@
 
                         <div class="form-group {{ $errors->has('redis_port') ? ' has-error ' : '' }}">
                             <label for="redis_port">{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}</label>
-                            <input type="number" name="redis_port" id="redis_port" value="6379" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}" />
+                            <input type="number" min="0" name="redis_port" id="redis_port" value="6379" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}" />
                             @if ($errors->has('redis_port'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -403,7 +403,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_port') ? ' has-error ' : '' }}">
                             <label for="mail_port">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_label') }}</label>
-                            <input type="number" name="mail_port" id="mail_port" value="2525" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_placeholder') }}" />
+                            <input type="number" min="0" name="mail_port" id="mail_port" value="2525" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_placeholder') }}" />
                             @if ($errors->has('mail_port'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>

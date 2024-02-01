@@ -55,7 +55,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Price')}}</label>
-											<input type="number" class="form-control" min="0.01" id="price" step="0.01" name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
+											<input type="number" min="0" class="form-control" min="0.01" id="price" step="0.01" name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
 										</div>
 									</div>
 								</div>
@@ -89,7 +89,7 @@
 													<x-info-tooltip text="{{__('ON to display (0) word count in plans')}}" />
 												</label>
 											</div>
-											<input type="number" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
+											<input type="number" min="0" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -102,7 +102,7 @@
 													<x-info-tooltip text="{{__('ON to display (0) image count in plans')}}" />
 												</label>
 											</div>
-											<input type="number" name="total_images" id="total_images" class="form-control"  value="{{isset($subscription) ? $subscription->total_images : null}}"/>
+											<input type="number" min="0" name="total_images" id="total_images" class="form-control"  value="{{isset($subscription) ? $subscription->total_images : null}}"/>
 										</div>
 									</div>
                                     <div class="col-md-12 mb-3">

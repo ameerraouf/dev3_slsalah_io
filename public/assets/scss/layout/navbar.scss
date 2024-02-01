@@ -129,8 +129,17 @@ body {
 			inset-inline-end: -0.5rem;
 			width: 0.6em;
 			height: 0.6em;
+			font-weight: bold;
 			border: none;
+			color: black;
+			font-size: 18px;
 			transform: none !important;
+		}
+		&.show {
+			&::after {
+				content: "-";
+				background-image:unset;
+			}
 		}
 	}
 

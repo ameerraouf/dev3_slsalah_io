@@ -36,7 +36,7 @@
 
                                 <div class="vstack gap-1">
                                     <label class="form-label">{{__('Order')}}</label>
-									<input type="number" class="form-control" id="order" name="order" value="{{isset($howitWorks) ? $howitWorks->order : null}}" required>
+									<input type="number" min="0" class="form-control" id="order" name="order" value="{{isset($howitWorks) ? $howitWorks->order : null}}" required>
                                 </div>
 
                                 <div class="vstack gap-1">

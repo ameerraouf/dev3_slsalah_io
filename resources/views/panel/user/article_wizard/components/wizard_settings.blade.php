@@ -84,7 +84,7 @@
 
             <div class="setting hidden">
                 <label class="form-label">{{ __('Number of Keywords') }}</label>
-                <input type="number" class="form-control" name="number_of_keywords" id="number_of_keywords"
+                <input type="number" min="0" class="form-control" name="number_of_keywords" id="number_of_keywords"
                     value="10" placeholder="{{ __('Number of keywords') }}" min="5" max="50">
             </div>
             <div class="setting hidden">
@@ -95,12 +95,12 @@
                 </div>
                 <div class="mb-3 col-xs-12">
                     <label class="form-label">{{ __('Number of Titles') }}</label>
-                    <input type="number" class="form-control" name="number_of_titles" id="number_of_titles"
+                    <input type="number" min="0" class="form-control" name="number_of_titles" id="number_of_titles"
                         value="3" placeholder="{{ __('Number of titles') }}" min="3" max="15">
                 </div>
                 <div class="mb-3 col-xs-12">
                     <label class="form-label">{{ __('Maximum Title length') }}</label>
-                    <input type="number" class="form-control" name="title_length" id="title_length" value="30"
+                    <input type="number" min="0" class="form-control" name="title_length" id="title_length" value="30"
                         placeholder="{{ __('Maximum Title length') }}" min="20" max="100">
                 </div>
             </div>
@@ -112,13 +112,13 @@
                 </div>
                 <div class="mb-3 col-xs-12">
                     <label class="form-label">{{ __('Number of Subtitles') }}</label>
-                    <input type="number" class="form-control" name="number_of_outline_subtitles"
+                    <input type="number" min="0" class="form-control" name="number_of_outline_subtitles"
                         id="number_of_outline_subtitles" value="10"
                         placeholder="{{ __('Number of Subtitles') }}" min="5" max="20">
                 </div>
                 <div class="mb-3 col-xs-12">
                     <label class="form-label">{{ __('Number of Outlines') }}</label>
-                    <input type="number" class="form-control" name="number_of_ " id="number_of_outlines"
+                    <input type="number" min="0" class="form-control" name="number_of_ " id="number_of_outlines"
                         value="3" placeholder="{{ __('Number of outlines') }}" min="3" max="5">
                 </div>
             </div>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="mb-3 col-xs-12">
                     <label class="form-label">{{ __('Number of Images') }}</label>
-                    <input type="number" class="form-control" name="number_of_images" id="number_of_images"
+                    <input type="number" min="0" class="form-control" name="number_of_images" id="number_of_images"
                         value="4" placeholder="{{ __('Number of images') }}" min="1" max="6">
                 </div>
             </div>
@@ -153,7 +153,7 @@
             <div id="advanced_setting" class="hidden">
                 <div class="mb-3 col-xs-12 result_count hidden">
                     {{-- <label class="form-label">{{ __('Number of Keywords') }}</label>
-						<input type="number" class="form-control" name="number_of_keywords" id="number_of_keywords"
+						<input type="number" min="0" class="form-control" name="number_of_keywords" id="number_of_keywords"
 							value="10" placeholder="{{ __('Number of keywords') }}" min="5" max="50"> --}}
                 </div>
                 <div class="mb-3 col-xs-12 result_count hidden">
@@ -239,7 +239,7 @@
                     <button class="text-primary cursor-pointer font-bold bg-transparent border-none" id="add_btn">{{ __('Add +') }}</button>
                     <div class="absolute" id='popover'>
                         <div class="popover__back hidden"></div>
-                        <div class="popover__content w-[400px] left-[-400px]">
+                        <div class="popover__content w-[400px] end-0">
                             <div class="absolute w-[100wh] h-[100vh] bg-black"></div>
                             <div class="new_data hidden m-1">
                                 <p class="popover__message"><label class="text-base">{{ __('Add Keyword') }}</label>

@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="flex flex-col justify-start text-start">
                                         <label class="form-label">{{__('Identity Number')}}</label>
-                                        <input type="number" class="form-control" id="identityNumber" name="identityNumber" min="100000" value="{{old('identityNumber')}}" required>
+                                        <input type="number" min="0" class="form-control" id="identityNumber" name="identityNumber" min="100000" value="{{old('identityNumber')}}" required>
                                     </div>
                                     <div class="flex flex-col justify-start text-start">
                                         <label class="form-label">{{__('Email')}}</label>

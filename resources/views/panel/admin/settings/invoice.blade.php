@@ -85,7 +85,7 @@
 							<div class="col-md-12">
 								<div class="mb-3">
 									<label class="form-label">{{__('Invoice VAT')}}%</label>
-									<input type="number" class="form-control" id="invoice_vat" name="invoice_vat" value="{{$setting->invoice_vat}}">
+									<input type="number" min="0" class="form-control" id="invoice_vat" name="invoice_vat" value="{{$setting->invoice_vat}}">
 								</div>
 							</div>
 

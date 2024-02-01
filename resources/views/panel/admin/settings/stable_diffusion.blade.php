@@ -82,7 +82,7 @@
                             {{-- <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">{{ __('Maximum Input Length') }}</label>
-                                    <input type="number" class="form-control" id="openai_max_input_length"
+                                    <input type="number" min="0" class="form-control" id="openai_max_input_length"
                                         name="opena_max_input_length" min="10" max="1500"
                                         value="{{ $setting->openai_max_input_length }}" required>
                                     <span
@@ -93,7 +93,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">{{ __('Image Count') }}</label>
-                                    <input type="number" class="form-control" id="openai_max_output_length"
+                                    <input type="number" min="0" class="form-control" id="openai_max_output_length"
                                         name="opena_max_output_length" min="1" max="10"
                                         value="{{ $setting->openai_max_output_length }}" required>
                                     <span

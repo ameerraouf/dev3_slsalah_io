@@ -118,12 +118,12 @@
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <label class="form-label">{{__('Maximum Length')}}</label>
-                                <input type="number" class="form-control" id="maximum_length" name="maximum_length" max="{{$setting->openai_max_output_length}}" value="400" placeholder="{{__('Maximum character length of text')}}" required>
+                                <input type="number" min="0" class="form-control" id="maximum_length" name="maximum_length" max="{{$setting->openai_max_output_length}}" value="400" placeholder="{{__('Maximum character length of text')}}" required>
                             </div>
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <label class="form-label">{{__('Number of Results')}}</label>
-                                <input type="number" class="form-control" id="number_of_results" name="number_of_results" value="1" placeholder="{{__('Number of results')}}" required>
+                                <input type="number" min="0" class="form-control" id="number_of_results" name="number_of_results" value="1" placeholder="{{__('Number of results')}}" required>
                             </div>
 
                             <div class="mb-3 col-xs-12 col-md-6">

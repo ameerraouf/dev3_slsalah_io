@@ -55,7 +55,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Price')}}</label>
-											<input type="number" class="form-control" id="price" min="0.01" step="0.01" name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
+											<input type="number" min="0" class="form-control" id="price" min="0.01" step="0.01" name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -118,7 +118,7 @@
 													<x-info-tooltip text="{{__('ON to display word count in plans')}}" />
 												</label>
 											</div>
-											<input type="number" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
+											<input type="number" min="0" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -131,7 +131,7 @@
 													<x-info-tooltip text="{{__('ON to display image count in plans')}}" />
 												</label>
 											</div>
-											<input type="number" name="total_images" id="total_images" class="form-control"  value="{{isset($subscription) ? $subscription->total_images : null}}"/>
+											<input type="number" min="0" name="total_images" id="total_images" class="form-control"  value="{{isset($subscription) ? $subscription->total_images : null}}"/>
 										</div>
 									</div>
 									
@@ -173,7 +173,7 @@
 									<div class="col-md-6 hidden">
 										<div class="mb-3">
 											<label class="form-label">{{__('Max Tokens')}}</label>
-											<input type="number" name="max_tokens" id="max_tokens" class="form-control"  value="{{isset($subscription) ? $subscription->max_tokens : null}}"/>
+											<input type="number" min="0" name="max_tokens" id="max_tokens" class="form-control"  value="{{isset($subscription) ? $subscription->max_tokens : null}}"/>
 										</div>
 									</div>
 									<div class="col-md-6">

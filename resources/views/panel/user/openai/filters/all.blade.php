@@ -169,9 +169,9 @@
         @foreach($items as $entry)
             @if($entry->generator != null)
             <article class="flex flex-col h-[185px] shadow-sm rounded-[10px] transition-all duration-300 group relative hover:shadow-xl">
-                <div class="!pt-4 !px-4 grow shrink overflow-hidden relative after:absolute after:bottom-0 after:inset-x-0 after:h-12 after:bg-gradient-to-b after:from-transparent after:to-[--tblr-body-bg]">
+                <div class="!pt-4 !px-4 grow shrink relative after:absolute after:bottom-0 after:inset-x-0 after:h-12 after:bg-gradient-to-b after:from-transparent after:to-[--tblr-body-bg]">
                     <header class="mb-3">
-                        <a onclick="return favoriteTemplate({{$entry->generator->id}});" id="favorite_area_{{$entry->generator->id}}" class="btn absolute top-2 end-3 z-10 w-[28px] shrink-0 h-[28px] p-0 opacity-100 transition-all hover:bg-[var(--tblr-primary)] hover:text-white">
+                        <a onclick="return favoriteTemplate({{$entry->generator->id}});" id="favorite_area_{{$entry->generator->id}}" class="btn absolute top-[-14px] end-[-14px] z-10 w-[28px] shrink-0 h-[28px] p-0 opacity-100 transition-all hover:bg-[var(--tblr-primary)] hover:text-white">
                             @if(!isFavorited($entry->generator->id))
                             <svg width="16" height="15" viewBox="0 0 16 15" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.99989 11.8333L3.88522 13.9966L4.67122 9.41459L1.33789 6.16993L5.93789 5.50326L7.99522 1.33459L10.0526 5.50326L14.6526 6.16993L11.3192 9.41459L12.1052 13.9966L7.99989 11.8333Z" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -184,7 +184,7 @@
                         </a>
 
                         <span data-file="{{trim($entry->generator->title)}}" class="sort-file inline-block !py-[0.15em] !px-1 rounded-md text-[11px] font-medium text-black" style="background: {{$entry->generator->color}}">
-                            {{$entry->generator->title}}
+                        {{__($entry->generator->title)}}
                         </span>
                     </header>
                     <div data-name="{{trim($entry->generator->type)}}" class="sort-name text-[13px] leading-[17px] text-heading w-4/5 shrink overflow-hidden">
@@ -202,6 +202,11 @@
                     </div>
                 </div>
                 <footer class="flex items-center justify-between text-[13px] !ps-5 !pe-2 !py-2 border-t border-solid border-r-0 border-b-0 border-l-0 border-[--tblr-border-color] mt-auto">
+                    <p class="m-0 text-heading sort-date" data-date="{{trim(strtotime($entry->created_at))}}">
+                    <b>{{__('Cost')}}</b>:{{$entry->credits}}
+                    </p>
+                </footer>
+                <footer class="flex items-center justify-between text-[13px] !ps-5 !pe-2 !py-2 border-t border-solid border-r-0 border-b-0 border-l-0 border-[--tblr-border-color] mt-auto">
                     <p class="m-0 text-heading sort-date" data-date="{{trim(strtotime($entry->created_at))}}">{{date("M j Y", strtotime($entry->created_at))}}</p>
                     <div class="grow-0 shrink-0 relative sort-cost" data-cost="{{trim($entry->credits)}}" >
                         <button class="inline-flex items-center justify-center p-0 border-none bg-[transparent] !w-7 !h-7 rounded-full text-inherit transition-all relative z-10 hover:bg-black hover:text-white group-[.theme-dark]/body:hover:bg-zinc-800 group-[.theme-dark]/body:hover:text-white hover:border hover:border-solid border-[--tblr-border-color] hover:shadow-sm" data-bs-toggle="dropdown">
@@ -216,13 +221,14 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" stroke-width="2" stroke="var(--tblr-red)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 13v-8.5a1.5 1.5 0 0 1 3 0v7.5" /><path d="M11 11.5v-2a1.5 1.5 0 0 1 3 0v2.5" /><path d="M14 10.5a1.5 1.5 0 0 1 3 0v1.5" /><path d="M17 11.5a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7l-.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47" /><path d="M2.541 5.594a13.487 13.487 0 0 1 2.46 -1.427" /><path d="M14 3.458c1.32 .354 2.558 .902 3.685 1.612" /></svg>
                                 {{__('Move')}}
                             </a>
-                            {{-- <a href="#" class="flex items-center gap-2 p-2 border-none rounded-md bg-[transparent] text-[12px] !no-underline font-medium text-heading hover:bg-slate-100 group-[.theme-dark]/body:hover:bg-zinc-900">
+                             <a href="{{ LaravelLocalization::localizeUrl( route('dashboard.user.openai.documents.delete', $entry->slug)) }}" onclick="return confirm('Are you sure?')"  class="flex items-center gap-2 p-2 border-none rounded-md bg-[transparent] text-[12px] !no-underline font-medium text-heading hover:bg-slate-100 group-[.theme-dark]/body:hover:bg-zinc-900">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" stroke-width="2" stroke="var(--tblr-red)" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path> <path d="M9 12l6 0"></path> </svg>
-                                Remove
-                            </a> --}}
+                                {{__('Delete')}}
+                            </a>
                         </div>
                     </div>
                 </footer>
+               
                 <a href="{{ LaravelLocalization::localizeUrl( route('dashboard.user.openai.documents.single', $entry->slug)) }}" class="absolute top-0 left-0 w-full h-full z-[2]" title="{{__('View and edit')}}"></a>
             </article>
             @endif

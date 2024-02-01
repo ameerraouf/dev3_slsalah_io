@@ -12,7 +12,7 @@
         <div class="p-0 container-fluid max-lg:w-full">
             <h1
                 class="flex items-center ps-[1.25rem] pe-9 min-h-[--lqd-header-height] max-w-full relative max-lg:hidden group-[.navbar-shrinked]/body:w-full group-[.navbar-shrinked]/body:px-0 group-[.navbar-shrinked]/body:text-center group-[.navbar-shrinked]/body:justify-center">
-                <a class="block px-0" href="{{ LaravelLocalization::localizeUrl(route('dashboard.index')) }}">
+                <a class="block pe-2 mt-3 pt-2 bg-black opacity-35 rounded-lg" href="{{ LaravelLocalization::localizeUrl(route('dashboard.index')) }}">
 
                     @if (isset($setting->logo_dashboard))
                         <img src="/{{ $setting->logo_dashboard_path }}"
@@ -1195,9 +1195,6 @@
                         id="top_search_word" onkeydown="return event.key != 'Enter';"
                         placeholder="{{ __('Search for templates and documents...') }}"
                         aria-label="Search in website">
-                    <kbd
-                        class="inline-block absolute top-1/2 !end-[12px] -translate-y-1/2 bg-[var(--tblr-bg-surface)] transition-all pointer-events-none peer-focus:opacity-0 peer-focus:invisible peer-focus:scale-70 group-[.is-searching]:opacity-0 group-[.is-searching]:invisible max-lg:hidden opacity-0"><span
-                            id="search-shortcut-key"></span> + K</kbd>
                     <span class="absolute top-1/2 -translate-y-1/2 !end-[20px]">
                         <span class="spinner-border spinner-border-sm text-muted hidden group-[.is-searching]:block"
                             role="status"></span>
@@ -1327,7 +1324,7 @@
     </button>
     <div id="add-new-floating"
         class="
-		min-w-[145px] absolute bottom-full !mb-4 end-0 !opacity-0 !invisible translate-y-2 transition-all bg-[--tblr-body-bg] shadow-[0_3px_12px_rgba(0,0,0,0.08)] rounded-md text-heading font-medium text-sm
+		min-w-[185px] absolute bottom-[42px] !mb-4 end-[28px] !opacity-0 !invisible translate-y-2 transition-all bg-[--tblr-body-bg] shadow-[0_3px_12px_rgba(0,0,0,0.08)] rounded-md text-heading font-medium text-sm
 		before:h-4 before:absolute before:inset-x-0 before:-bottom-4
 		group-hover:!opacity-100 group-hover:!visible group-hover:translate-y-0
 	  dark:bg-zinc-800">

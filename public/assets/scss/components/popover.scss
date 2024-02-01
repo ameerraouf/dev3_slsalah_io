@@ -27,7 +27,8 @@
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    left: calc(-250px);
+    inset-inline-end: 0 !important;
+    right: unset !important;
     transform: translate(0, 15px);
     background-color: var(--tblr-bg-surface);
     padding: 10px;
@@ -40,7 +41,8 @@
     position: absolute;
     z-index: -1;
     content: "";
-    right: calc(10% - 10px);
+    right: unset;
+    inset-inline-end: 3%;
     top: -8px;
     border-style: solid;
     border-width: 0 10px 10px 10px;

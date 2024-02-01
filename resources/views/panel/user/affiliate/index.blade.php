@@ -105,7 +105,7 @@
 
 								<div class="mb-[20px]">
 									<label class="form-label" for="affiliate_bank_account">{{__('Amount')}}</label>
-									<input type="number" class="form-control h-10" name="amount" id="amount" min="{{$setting->affiliate_minimum_withdrawal}}" placeholder="{{__('Minimum Withdrawal Amount is')}} {{$setting->affiliate_minimum_withdrawal}}">
+									<input type="number" min="0" class="form-control h-10" name="amount" id="amount" min="{{$setting->affiliate_minimum_withdrawal}}" placeholder="{{__('Minimum Withdrawal Amount is')}} {{$setting->affiliate_minimum_withdrawal}}">
 								</div>
 
 								<button type="submit" id="send_request_button" form="send_request_form" class="btn btn-primary w-100 rounded-[10px]">{{__('Send Request')}}</button>

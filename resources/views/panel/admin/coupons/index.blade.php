@@ -121,13 +121,13 @@
 						<div class="col-6">
 							<div class="mb-[15px]">
 								<label class="form-label">{{__('Discount')}} (%)</label>
-								<input type="number" class="form-control" name="discount"  value="{{old('discount')}}" required min="0" max="99" step="0.01">
+								<input type="number" min="0" class="form-control" name="discount"  value="{{old('discount')}}" required min="0" max="99" step="0.01">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="mb-[15px]">
 								<label class="form-label">{{__('Limit')}}</label>
-								<input type="number" class="form-control" name="limit" value="{{old('limit')}}" placeholder="{{ __('Enter -1 for unlimited usage.') }}" min="-1" required>
+								<input type="number" min="0" class="form-control" name="limit" value="{{old('limit')}}" placeholder="{{ __('Enter -1 for unlimited usage.') }}" min="-1" required>
 							</div>
 						</div>
 					</div>
@@ -182,13 +182,13 @@
 							<div class="col-6">
 								<div class="mb-[15px]">
 									<label class="form-label">{{__('Discount')}} (%)</label>
-									<input type="number" class="form-control" name="discount" id="Ediscount" required min="0" max="99" step="0.01">
+									<input type="number" min="0" class="form-control" name="discount" id="Ediscount" required min="0" max="99" step="0.01">
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="mb-[15px]">
 									<label class="form-label">{{__('Limit')}}</label>
-									<input type="number" class="form-control" name="limit" id="Elimit" placeholder="{{ __('Enter -1 for unlimited usage.') }}" min="-1" required>
+									<input type="number" min="0" class="form-control" name="limit" id="Elimit" placeholder="{{ __('Enter -1 for unlimited usage.') }}" min="-1" required>
 								</div>
 							</div>
 						</div>

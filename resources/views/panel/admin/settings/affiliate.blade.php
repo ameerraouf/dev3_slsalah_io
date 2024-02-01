@@ -27,11 +27,11 @@
 					<form id="settings_form" onsubmit="return affiliateSettingsSave();" enctype="multipart/form-data">
 						<div class="mb-[25px]">
 							<label class="form-label">{{__('Affiliate Minimum Withdrawal')}}</label>
-							<input type="number" class="form-control" id="affiliate_minimum_withdrawal" name="affiliate_minimum_withdrawal" value="{{$setting->affiliate_minimum_withdrawal}}">
+							<input type="number" min="0" class="form-control" id="affiliate_minimum_withdrawal" name="affiliate_minimum_withdrawal" value="{{$setting->affiliate_minimum_withdrawal}}">
 						</div>
 						<div class="mb-[25px]">
 							<label class="form-label">{{__('Affiliate Comission Percentage')}} (%)</label>
-							<input type="number" class="form-control" id="affiliate_commission_percentage" name="affiliate_commission_percentage" value="{{$setting->affiliate_commission_percentage}}">
+							<input type="number" min="0" class="form-control" id="affiliate_commission_percentage" name="affiliate_commission_percentage" value="{{$setting->affiliate_commission_percentage}}">
 						</div>
 						<button form="settings_form" id="settings_button" class="btn btn-primary w-100">
 							{{__('Save')}}

@@ -74,7 +74,7 @@
                 @if($openai->type == 'text')
                     <div class="mb-[20px]">
                         <label class="form-label">{{__('Maximum Length')}}</label>
-                        <input type="number" class="form-control" id="maximum_length" name="maximum_length"
+                        <input type="number" min="0" class="form-control" id="maximum_length" name="maximum_length"
                                max="{{Auth::user()->remaining_words}}"
                                placeholder="{{__('Maximum character length of text')}}" required>
                     </div>
@@ -116,7 +116,7 @@
 
                     <div class="mb-[20px]">
                         <label class="form-label">{{__('Number of Results')}}</label>
-                        <input type="number" class="form-control" id="number_of_results"
+                        <input type="number" min="0" class="form-control" id="number_of_results"
                                name="number_of_results" value="1"
                                placeholder="{{__('Maximum character length of text')}}" required>
                     </div>

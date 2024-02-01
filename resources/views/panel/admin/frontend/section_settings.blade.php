@@ -323,7 +323,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Blog Posts Per Page')}}</label>
-                                <input type="number" class="form-control" id="blog_posts_per_page" name="blog_posts_per_page" min="1" max="6" value="{{$fSectSettings->blog_posts_per_page}}">
+                                <input type="number" min="0" class="form-control" id="blog_posts_per_page" name="blog_posts_per_page" min="1" max="6" value="{{$fSectSettings->blog_posts_per_page}}">
                             </div>
                         </div>
 
@@ -359,7 +359,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Blog Posts Per Page')}}</label>
-                                <input type="number" class="form-control" id="blog_a_posts_per_page" name="blog_a_posts_per_page" min="1" max="12" value="{{$fSectSettings->blog_a_posts_per_page}}">
+                                <input type="number" min="0" class="form-control" id="blog_a_posts_per_page" name="blog_a_posts_per_page" min="1" max="12" value="{{$fSectSettings->blog_a_posts_per_page}}">
                             </div>
                         </div>
 

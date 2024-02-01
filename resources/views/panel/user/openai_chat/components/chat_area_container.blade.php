@@ -8,7 +8,7 @@
                 <a class="btn-primary cursor-default font-bold" id="add_btn">{{ __('Add +') }}</a>
                 <div id='custom__popover' class="absolute">
                     <div class="custom__popover__back hidden"></div>
-                    <div class="custom__popover__content w-[400px] left-[-400px] p-[15px] bg-[#FaFaFc]">
+                    <div class="custom__popover__content w-[400px] end-0 p-[15px] bg-[#FaFaFc]">
                         <div class="absolute w-[100wh] h-[100vh] bg-black"></div>
                         <input type="text" class="form-control my-2 bg-[#ffffff]" placeholder="{{ __('Add Title') }}"
                             id="new_prompt_title">
@@ -105,7 +105,7 @@
         <div id="export_btns"
             class="flex flex-row justify-center items-center absolute top-[-2px] transition-all opacity-0 invisible translate-y-2 scale-95 group-hover:!opacity-100 group-hover:!visible group-hover:translate-y-0 group-hover:scale-100">
             <button id="export_pdf"
-                class="mx-0 hover:bg-[#58379b] bg-[#330582] text-white border-none rounded-none rounded-l-md btn-primary w-8 py-[0.25em] flex items-center"
+                class="mx-0 hover:bg-[#58379b] bg-[#330582] text-white border-none rounded-none rounded-s-md btn-primary w-8 py-[0.25em] flex items-center"
                 onclick="exportAsPdf();">
                 <span class="flex items-center text-[10px]" id="export_pdf_span">{{ __('PDF') }}
                 </span>
@@ -113,11 +113,11 @@
             <button id="export_word"
                 class="border-x-[1px] border-y-0 px-[6px]  hover:bg-[#58379b] border-[#D9D9D9] border-opacity-30 bg-[#330582] text-white text-center justify-center rounded-none btn-primary w-8 py-[0.25em] flex items-center hover:none"
                 onclick="exportAsWord();">
-                <span class="flex items-center text-[10px]" id="export_word_span">{{ __('Word') }}
+                <span class="flex items-center text-[10px]" id="export_word_span">Word
                 </span>
             </button>
             <button id="export_txt"
-                class="mx-0 border-none  hover:bg-[#58379b] bg-[#330582] text-white rounded-none rounded-r-md btn-primary w-8 py-[0.25em] flex items-center"
+                class="mx-0 border-none  hover:bg-[#58379b] bg-[#330582] text-white rounded-none rounded-e-md btn-primary w-8 py-[0.25em] flex items-center"
                 onclick="exportAsTxt();">
                 <span class="flex items-center text-[10px]" id="export_txt_span">{{ __('Txt') }}
                 </span>
