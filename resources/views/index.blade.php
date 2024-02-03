@@ -210,6 +210,7 @@
 				</div>
 				<div class="h-[230px] absolute bottom-0 inset-x-0 z-10 bg-gradient-to-t from-body-bg to-transparent templates-cards-overlay"></div>
 			</div>
+			{{count($templates)}}
 			<div class="relative z-20 mt-2 text-center">
 				<button class="text-[#5A4791] font-semibold text-[14px] templates-show-more">
 					<span class="inline-grid rounded-lg place-content-center w-7 h-7 bg-[#885EFE] bg-opacity-10 mr-1">

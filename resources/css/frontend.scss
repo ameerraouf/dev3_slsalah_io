@@ -25,10 +25,15 @@
 	font-weight: 700;
 }
 
+
 @layer base {
 
 	:root {
 		--body-bg: #fafafc;
+	}
+
+	html {
+		scroll-behavior: smooth
 	}
 
 	h1,
