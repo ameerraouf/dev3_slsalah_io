@@ -47,7 +47,7 @@
 
                             @foreach($items as $entry)
                                 <tr>
-                                    <td class="sort-name"><img src="/{{$entry->image}}" class="img-fluid" style="height: 125px; width: auto" alt=""></td>
+                                    <td class="sort-name"><img src="/{{$entry->image}}" class="img-fluid" style="height: 75px; width: auto" alt=""></td>
                                     <td class="sort-group">{{$entry->title}}</td>
                                     <td class="sort-group">{{$entry->description}}</td>
                                     <td class="sort-date" data-date="{{strtotime($entry->created_at)}}">

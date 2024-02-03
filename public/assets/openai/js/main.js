@@ -4,3 +4,9 @@ $.ajaxSetup({
     }
 });
 
+function handleDelete(event,msg) {
+    var confirmed = confirm(msg);
+    if (!confirmed) {
+        event.preventDefault();
+    }
+}

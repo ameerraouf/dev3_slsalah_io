@@ -241,7 +241,7 @@
                 @foreach($tools as $tool)
 				<x-box style="3" title="{!! __($tool->title) !!}" desc="{!! __($tool->description) !!}">
 					<x-slot name="image">
-						<img class="-mx-8 max-w-[calc(100%+4rem)]" src="/{{$tool->image}}" alt="{!! __($tool->title) !!}" width="696" height="426">
+						<img class="-mx-8 max-w-[calc(100%+4rem)] h-[174px] xl:h-[225px]" src="/{{$tool->image}}" alt="{!! __($tool->title) !!}" width="696" height="426">
 					</x-slot>
 				</x-box>
                 @endforeach
@@ -309,7 +309,7 @@
 							</figure>
 							<div class="opacity-0 whitespace-nowrap transition-all group-[&.is-nav-selected]:opacity-100">
 								<p class="text-heading">{!! __($entry->full_name) !!}</p>
-								<p class="text-heading opacity-15">{!! __($entry->job_title) !!}</p>
+								<p class="text-[#AB7FE6]">{!! __($entry->job_title) !!}</p>
 							</div>
 						</div>
 						@endforeach

@@ -46,7 +46,7 @@
                     @endif
                 @endforeach
             </select>
-            <button @if(env('APP_STATUS') == 'Demo') type="button" onclick="return toastr.info('This feature is disabled in Demo version.')" @else type="submit" @endif class='btn btn-default btn-block absolute top-2.5 right-2.5 flex p-1'>
+            <button @if(env('APP_STATUS') == 'Demo') type="button" onclick="return toastr.info('This feature is disabled in Demo version.')" @else type="submit" @endif class='btn btn-default btn-block absolute top-2.5 end-2.5 flex p-1'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M12 5l0 14"></path>
@@ -66,7 +66,7 @@
                     @endif
                 @endforeach
             </select>
-            <button @if(env('APP_STATUS') == 'Demo') type="button" onclick="return toastr.info('This feature is disabled in Demo version.')" @else type="submit" @endif class='btn btn-default btn-block absolute top-2.5 right-2.5 flex p-1'>
+            <button @if(env('APP_STATUS') == 'Demo') type="button" onclick="return toastr.info('This feature is disabled in Demo version.')" @else type="submit" @endif class='btn btn-default btn-block absolute top-2.5 end-2.5 flex p-1'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M12 5l0 14"></path>
