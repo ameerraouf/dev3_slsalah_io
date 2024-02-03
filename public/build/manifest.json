@@ -12,12 +12,12 @@
     "src": "public/assets/fonts/OnestRegular1602-hint.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-447d3ae2.css",
+    "file": "assets/app-7961d870.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/frontend.scss": {
-    "file": "assets/frontend-e66d1f2a.css",
+    "file": "assets/frontend-f8613294.css",
     "isEntry": true,
     "src": "resources/css/frontend.scss"
   },
