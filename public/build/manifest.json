@@ -12,17 +12,17 @@
     "src": "public/assets/fonts/OnestRegular1602-hint.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-7961d870.css",
+    "file": "assets/app-dde2fe2f.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/frontend.scss": {
-    "file": "assets/frontend-f8613294.css",
+    "file": "assets/frontend-1cbe83a8.css",
     "isEntry": true,
     "src": "resources/css/frontend.scss"
   },
   "resources/js/app.js": {
-    "file": "assets/app-9a25e63b.js",
+    "file": "assets/app-81b77904.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
