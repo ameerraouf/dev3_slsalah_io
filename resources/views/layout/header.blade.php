@@ -23,7 +23,7 @@
         </a>
         <div
             class="site-nav-container basis-1/3 transition-all max-lg:w-full max-lg:absolute max-lg:top-full max-lg:right-0 max-lg:bg-[#343C57] max-lg:text-white max-lg:overflow-hidden max-lg:max-h-0 [&.lqd-is-active]:max-lg:max-h-[calc(100vh-150px)]">
-            <div class="max-lg:max-h-[inherit] max-lg:overflow-y-scroll">
+            <div class="max-lg:max-h-[inherit] max-lg:overflow-y-auto">
                 <ul
                     class="flex items-center justify-center text-center gap-14 whitespace-nowrap max-xl:gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-5 max-lg:p-10">
                     @php
@@ -116,8 +116,8 @@
             @auth
             <div class="mx-3">
                 <x-button link="{{ LaravelLocalization::localizeUrl( route('dashboard.index') ) }}"
-                    label="{!! __('Dashboard') !!}" border="border-[2px] border-white !border-opacity-0"
-                    bg="bg-white !bg-opacity-10 hover:!bg-opacity-100 group-[.lqd-is-sticky]/header:bg-black group-[.lqd-is-sticky]/header:hover:!bg-opacity-100"
+                    label="{!! __('Dashboard') !!}" border="border-[2px] border-white !border-opacity-10 group-[.lqd-is-sticky]/header:border-black"
+                    bg="bg-white !bg-opacity-10 hover:!bg-opacity-100  group-[.lqd-is-sticky]/header:hover:!bg-opacity-100"
                     text="text-white group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" />
             </div>
             @else
@@ -127,7 +127,7 @@
                 text="text-white group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" />
             <x-button link="{{ LaravelLocalization::localizeUrl( route('register') ) }}"
                 label="{!! __($fSetting->join_hub) !!}" border="border-[2px] border-white !border-opacity-0"
-                bg="bg-white !bg-opacity-10 hover:!bg-opacity-100 group-[.lqd-is-sticky]/header:bg-black group-[.lqd-is-sticky]/header:hover:!bg-opacity-100"
+                bg="bg-white !bg-opacity-10 hover:!bg-opacity-100  group-[.lqd-is-sticky]/header:hover:!bg-opacity-100"
                 text="text-white group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" />
             @endauth
 

@@ -1,6 +1,6 @@
 <?php
 
-	$classname = ['inline-flex', 'items-center', 'relative', 'overflow-hidden', 'transition-all', 'duration-300', 'hover:scale-105', 'hover:shadow-lg',  'hover:border-black', 'hover:bg-black', 'hover:text-white'];
+	$classname = ['inline-flex', 'items-center', 'relative', 'overflow-hidden', 'transition-all', 'duration-300', 'hover:scale-105', 'hover:shadow-lg',  'hover:border-[#00000000]', 'hover:bg-[#00000040]', 'hover:text-white'];
 
 	$size_classname = [
 		'md' => 'py-2 px-4 rounded-lg font-medium',

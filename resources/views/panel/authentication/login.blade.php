@@ -205,7 +205,7 @@
                                 </div>
                             @endif
                             @if ($setting->register_active == 1)
-                                <div class="mt-20 text-center text-muted">
+                                <div class="mt-3 text-center text-muted">
                                     {{ __("Don't have account yet?") }} <a href="{{ route('register') }}" tabindex="-1"
                                         class="font-medium underline">{{ __('Sign up') }}</a>
                                 </div>

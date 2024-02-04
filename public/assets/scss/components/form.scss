@@ -109,6 +109,15 @@ button {
 
 .form-check {
 	cursor: pointer;
+	padding-left: 0 !important;
+	padding-inline-start: 1.5rem !important;
+	&:lang(ar) {
+		.form-check-input {
+			float: right;
+			margin-right: -1.5rem;
+			margin-left: unset;
+	}
+	}
 }
 
 .input-group {
