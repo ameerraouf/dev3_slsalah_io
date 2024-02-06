@@ -101,6 +101,7 @@
                             toastr.error(value);
                         });
                         document.getElementById("generate_speech_button").disabled = false;
+                        document.getElementById("generate_speech_button").innerHTML = "{{ __('Generate') }}";
                         // document.getElementById("generate_speech_button").innerHTML = "{{ __('Save') }}";
                     }
                 });
