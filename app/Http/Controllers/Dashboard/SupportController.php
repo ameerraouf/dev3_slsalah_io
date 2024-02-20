@@ -15,7 +15,7 @@ class SupportController extends Controller
     public function list(){
         $user = Auth::user();
         if ($user->type == 'admin')
-            $items = UserSupport::all();
+            $items = UserSupport::paginate(5);
         else
             $items = $user->supportRequests;
 

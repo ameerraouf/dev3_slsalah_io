@@ -38,12 +38,12 @@
 								{{__('Template Name')}}
 								<x-info-tooltip text="{{__('Pick a name for the template.')}}" />
 							</label>
-							<input type="text" class="form-control" id="name" name="name" value="{{$template!=null ? $template->name : null}}">
+							<input type="text" class="form-control" id="name" name="name" value="{{$template!=null ? $template->name : null}}" required>
 						</div>
 						<div class="col-md-12">
 							<div class="mb-3">
 								<label class="form-label">{{__('Category')}}<x-info-tooltip text="{{__('Pick a category for the template.')}}" /></label>
-								<select class="form-select" name="chat_category" id="chat_category">										
+								<select class="form-select" name="chat_category" id="chat_category" required>										
 									@if ($template!=null)
 										<option value="" {{$template->category == '' ? 'selected' : null}}>{{__('Default')}}</option>
 										@foreach ($categoryList as $category)
@@ -63,14 +63,14 @@
 								{{__('Template Short Name')}}
 								<x-info-tooltip text="{{__('Shortened name of the template or human name. Maximum 3 letters is suggested.')}}" />
 							</label>
-							<input type="text" class="form-control" id="short_name" name="short_name" value="{{$template!=null ? $template->short_name : null}}">
+							<input type="text" class="form-control" id="short_name" name="short_name" value="{{$template!=null ? $template->short_name : null}}" required>
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">
 								{{__('Description')}}
 								<x-info-tooltip text="{{__('A short description of what this chat template can help with.')}}" />
 							</label>
-							<textarea class="form-control" id="description" name="description">{{$template!=null ? $template->description : null}}</textarea>
+							<textarea class="form-control" id="description" name="description" required>{{$template!=null ? $template->description : null}}</textarea>
 						</div>
                         <div class="mb-[20px]">
                             <label class="form-label">

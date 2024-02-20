@@ -77,7 +77,7 @@ class UserController extends Controller
 
     public function openAIList()
     {
-        $list = OpenAIGenerator::all();
+        $list = OpenAIGenerator::paginate(8);
         $filters = OpenaiGeneratorFilter::get();
         return view('panel.user.openai.list', compact('list', 'filters'));
     }
@@ -111,7 +111,7 @@ class UserController extends Controller
     public function openAIGenerator($slug)
     {
         $openai = OpenAIGenerator::whereSlug($slug)->firstOrFail();
-        $userOpenai = UserOpenai::where('user_id', Auth::id())->where('openai_id', $openai->id)->orderBy('created_at', 'desc')->paginate(10);
+        $userOpenai = UserOpenai::where('user_id', Auth::id())->where('openai_id', $openai->id)->orderBy('created_at', 'desc')->paginate(5);
         return view('panel.user.openai.generator', compact('openai', 'userOpenai'));
     }
 
@@ -346,7 +346,7 @@ class UserController extends Controller
     public function documentsAll(Request $request, $folderID = null)
     {
         $filter = $request->filter ?? "all";
-
+        
         $items = Auth::user()
         ->openai()
         ->whereHas('generator', function ($query) {
@@ -502,9 +502,15 @@ class UserController extends Controller
 
         $sendTo = $request->to_mail;
 
-        dispatch(new SendInviteEmail($user, $sendTo));
+        try{
+            dispatch(new SendInviteEmail($user, $sendTo));
 
-        return response()->json([], 200);
+            return response()->json(['message' => 'Sent successfully'], 200);
+        }   
+        catch(\Exception $e){
+            return response()->json(['message' => $e->getMessage()]);
+        }
+
     }
 
     public function affiliatesListSendRequest(Request $request)
@@ -521,17 +527,24 @@ class UserController extends Controller
         foreach ($list2 as $affWithdrawal) {
             $totalWithdrawal += $affWithdrawal->amount;
         }
-        if ($totalEarnings - $totalWithdrawal >= $request->amount) {
-            $user->affiliate_bank_account = $request->affiliate_bank_account;
-            $user->save();
-            $withdrawalReq = new UserAffiliate();
-            $withdrawalReq->user_id = Auth::id();
-            $withdrawalReq->amount = $request->amount;
-            $withdrawalReq->save();
+        try{
 
-            createActivity($user->id, 'Sent', 'Affiliate Withdraw Request', route('dashboard.admin.affiliates.index'));
-        } else {
-            return response()->json(['error' => 'ERROR'], 411);
+            if ($totalEarnings - $totalWithdrawal >= $request->amount) {
+                $user->affiliate_bank_account = $request->affiliate_bank_account;
+                $user->save();
+                $withdrawalReq = new UserAffiliate();
+                $withdrawalReq->user_id = Auth::id();
+                $withdrawalReq->amount = $request->amount;
+                $withdrawalReq->save();
+                
+                createActivity($user->id, 'Sent', 'Affiliate Withdraw Request', route('dashboard.admin.affiliates.index'));
+            } 
+            else{
+                return response()->json(['error' => "You cannot withdrawal with this amount. Please check"]);
+            }
+        }
+        catch(\Exception $e){
+            return response()->json(['error' => $e->getMessage()]);
         }
     }
 }

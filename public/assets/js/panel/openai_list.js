@@ -40,11 +40,12 @@ function favoriteTemplate( id ) {
 
 	$.ajax( {
 		type: "post",
-		url: "/dashboard/user/openai/favorite   ",
+		url: "/dashboard/user/openai/favorite",
 		data: formData,
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
+			console.log(id);
 			$( "#favorite_area_" + id ).html( data.html );
 		},
 	} );

@@ -13,7 +13,6 @@
                                     id="workbook_title"
                                     class="form-control rounded-md"
                                     placeholder="{{__('Untitled Document...')}}"
-                                    value="{{__('Untitled Document...')}}"
                                     required
                                 >
 

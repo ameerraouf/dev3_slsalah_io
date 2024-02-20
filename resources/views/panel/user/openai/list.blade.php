@@ -183,6 +183,9 @@
 		</div>
 	</div>
 </div>
+<div class="float-right m-4">
+	{{ $list->links() }}
+</div>
 @endsection
 
 @section('script')

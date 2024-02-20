@@ -43,7 +43,7 @@ class AIChatController extends Controller
     public function openAIChatList()
     {
         //$aiList = OpenaiGeneratorChatCategory::all();
-        $aiList = OpenaiGeneratorChatCategory::where('slug', '<>', 'ai_vision')->where('slug', '<>', 'ai_pdf')->get();
+        $aiList = OpenaiGeneratorChatCategory::where('slug', '<>', 'ai_vision')->where('slug', '<>', 'ai_pdf')->paginate(8);
 
         $categoryList = ChatCategory::all();
         $favData = Favourite::where('type', 'chat')

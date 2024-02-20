@@ -38,7 +38,7 @@
 								{{__('Category Name')}}
 								<x-info-tooltip text="{{__('Category name for Custom AI Writers')}}" />
 							</label>
-							<input type="text" class="form-control" id="category_name" name="category_name" value="{{$item!=null ? $item->name : null}}">
+							<input type="text" class="form-control" id="category_name" name="category_name" value="{{$item!=null ? $item->name : null}}" required>
 						</div>
 
                         <button form="custom_template_form" id="custom_template_button" class="btn btn-primary !py-3 w-100">

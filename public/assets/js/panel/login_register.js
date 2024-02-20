@@ -138,7 +138,13 @@ function PasswordResetMailForm() {
 
 	var formData = new FormData();
 	formData.append( 'email', $( "#password_reset_email" ).val() );
-
+	
+	$.ajaxSetup({
+		headers: {
+		  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		  }
+	   });
+	  
 	$.ajax( {
 		type: "post",
 		url: "/forgot-password",
@@ -146,17 +152,25 @@ function PasswordResetMailForm() {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success( magicai_localize.password_reset_link );
-			document.querySelector( '#app-loading-indicator' )?.classList?.add( 'opacity-0' );
+			
+			if (data.data !== null) {
+				toastr.success( magicai_localize.password_reset_link );
+				// document.querySelector( '#app-loading-indicator' )?.classList?.add( 'opacity-0' );
+			}
+			else {
+				toastr.error( "Email not found in our system !!!" );
+				console.error( "Email not found in our system !!!" );
+			}
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
 			$.each( err, function ( index, value ) {
 				toastr.error( value );
+				console.log(value);
 			} );
 			document.getElementById( "PasswordResetFormButton" ).disabled = false;
 			document.getElementById( "PasswordResetFormButton" ).innerHTML = "Send Instructions!";
-			document.querySelector( '#app-loading-indicator' )?.classList?.add( 'opacity-0' );
+			// document.querySelector( '#app-loading-indicator' )?.classList?.add( 'opacity-0' );
 		}
 	} );
 	return false;

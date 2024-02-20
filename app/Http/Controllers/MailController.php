@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendPasswordResetEmail;
+use App\Mail\PasswordResetEmail;
+use App\Models\EmailTemplates;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Mail;
+
 
 class MailController extends Controller
 {
@@ -25,13 +31,20 @@ class MailController extends Controller
 
     public function sendPasswordResetMail(Request $request){
         $user = User::where('email', $request->email)->first();
+        $settings = Setting::first();
+        $template = EmailTemplates::where('id', 3)->first();
         if ($user != null){
-            $user->password_reset_code = Str::random(67);
-            $user->save();
-            dispatch(new SendPasswordResetEmail($user));
-            return back()->with(['message' => 'Password reset mail sent succesfully','type' => 'success' ]);
+            try{
+                $user->password_reset_code = Str::random(67);
+                $user->save();
+                Mail::to($user->email)->send(new PasswordResetEmail($user, $settings, $template));
+                return response()->json(['data' => $user , 'message' => 'Password reset mail sent succesfully','type' => 'success']);
+            }
+            catch(\Exception $e){
+                return response()->json(['data' => $user,'message' => $e->getMessage() ,'type' => 'error']);
+            }
         }else{
-            return back()->with(['message' => 'Password reset mail sent succesfully','type' => 'success' ]);
+            return response()->json(['data' => 'NO DATAAA'])->with(['message' => 'Email not found','type' => 'error' ]);
         }
     }
 

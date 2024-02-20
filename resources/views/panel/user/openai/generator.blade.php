@@ -49,7 +49,7 @@
         <script>
             function generateSpeech() {
                 "use strict";
-
+                console.log( $('#workbook_title').val());
                 document.getElementById("generate_speech_button").disabled = true;
                 document.getElementById("generate_speech_button").innerHTML = magicai_localize.please_wait;
 
@@ -76,14 +76,19 @@
                 });
                 var jsonData = JSON.stringify(speechData);
                 formData.append('speeches', jsonData);
+                
+                console.log(formData);
 
+                $.ajaxSetup({
+                    headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
                     type: "post",
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                    },
+                   
                     url: "/dashboard/user/openai/generate-speech",
-                    data: formData,
+                    data: {"_token": "{{ csrf_token() }}", formData},
                     contentType: false,
                     processData: false,
                     success: function(data) {
@@ -2029,7 +2034,7 @@
                         formData.append('speeches', jsonData);
                         formData.append('preview', true);
 
-
+                        console.log(formData);
                         $.ajax({
                             type: "post",
                             headers: {

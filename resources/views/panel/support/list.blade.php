@@ -64,6 +64,9 @@
 			</div>
         </div>
     </div>
+	<div class="float-right m-4">
+		{{ $items->links() }}
+   </div>
 @endsection
 @section('script')
     <script src="/assets/js/panel/support.js"></script>

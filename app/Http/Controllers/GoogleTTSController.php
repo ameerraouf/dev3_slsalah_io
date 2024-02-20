@@ -149,7 +149,7 @@ class GoogleTTSController extends Controller
         }
         $user->save();
 
-        $userOpenai = UserOpenai::where('user_id', Auth::id())->where('openai_id', $ai->id)->orderBy('created_at', 'desc')->paginate(10);
+        $userOpenai = UserOpenai::where('user_id', Auth::id())->where('openai_id', $ai->id)->orderBy('created_at', 'desc')->get();
         $openai = OpenAIGenerator::where('id', $ai->id)->first();
         $html2 = view('panel.user.openai.generator_components.generator_sidebar_table', compact('userOpenai', 'openai'))->render();
         return response()->json(compact('html2'));

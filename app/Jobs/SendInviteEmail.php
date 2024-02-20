@@ -42,7 +42,7 @@ class SendInviteEmail implements ShouldQueue
     public function handle()
     {
         try{
-        Mail::to($this->sendTo)->send(new InviteEmail($this->user, $this->settings, $this->template));
+            Mail::to($this->sendTo)->send(new InviteEmail($this->user, $this->settings, $this->template));
         }
          catch(\Exception $e){
             error_log($e->getMessage());

@@ -23,6 +23,9 @@ function sendRequestForm() {
 
 	$.ajax( {
 		type: "post",
+		headers: {
+			"Content-Length": 0
+		  },
 		url: "/dashboard/user/affiliates/send-request",
 		data: formData,
 		contentType: false,
@@ -34,6 +37,7 @@ function sendRequestForm() {
 			}, 900 );
 		},
 		error: function ( data ) {
+			console.log(data);
 			toastr.error('You cannot withdrawal with this amount. Please check')
 			document.getElementById( "send_request_button" ).disabled = false;
 			document.getElementById( "send_request_button" ).innerHTML = "Send Request";
@@ -59,11 +63,13 @@ function sendInvitationForm() {
         contentType: false,
         processData: false,
         success: function ( data ) {
+			console.log(data);
             toastr.success('Invitation Sent Succesfully!');
             document.getElementById( "send_invitation_button" ).disabled = false;
             document.getElementById( "send_invitation_button" ).innerHTML = "Send Invitation";
         },
         error: function ( data ) {
+			console.log(data);
             toastr.error('Error while sending information. Please contact us.')
             document.getElementById( "send_invitation_button" ).disabled = false;
             document.getElementById( "send_invitation_button" ).innerHTML = "Send Invitation";

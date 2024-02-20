@@ -63,3 +63,6 @@
         </div>
     </div>
 </div>
+<div class="float-right m-4">
+	{{ $aiList->links() }}
+</div>

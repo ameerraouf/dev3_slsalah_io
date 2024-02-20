@@ -38,14 +38,14 @@
 								{{__('Template Title')}}
 								<x-info-tooltip text="{{__('A title for the template that will show in templates list and in search results')}}" />
 							</label>
-							<input type="text" class="form-control" id="title" name="title" value="{{$template!=null ? $template->title : null}}">
+							<input type="text" class="form-control" id="title" name="title" value="{{$template!=null ? $template->title : null}}" required>
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">
 								{{__('Template Description')}}
 								<x-info-tooltip text="{{__('A short description about what this template do.')}}" />
 							</label>
-							<textarea class="form-control" rows="3" id="description" name="description">{{$template!=null ? $template->description : null}}</textarea>
+							<textarea class="form-control" rows="3" id="description" name="description" required>{{$template!=null ? $template->description : null}}</textarea>
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">
@@ -53,7 +53,7 @@
 								<a target="_blank" href="https://tabler-icons.io/">TablerIcons as SVG</a>
 								<x-info-tooltip text="{{__('Paste the svg code you get from the Tabler Icons or any other icon sets')}}" />
 							</label>
-							<input type="text" class="form-control" id="image" name="image" value="{{$template!=null ? $template->image : null}}">
+							<input type="text" class="form-control" id="image" name="image" value="{{$template!=null ? $template->image : null}}" required>
 						</div>
 
 						<div class="mb-[20px]">
@@ -65,7 +65,7 @@
 								<div class="w-[17px] h-[17px] rounded-full overflow-hidden">
 									<input type="color" class="w-[150%] h-[150%] relative -start-1/4 -top-1/4 p-0 rounded-full border-none cursor-pointer appearance-none" id="color" name="color" value="{{$template!=null ? $template->color : '#8fd2d0'}}">
 								</div>
-								<input class="bg-transparent border-none outline-none text-inherit" id="color_value" name="color_value" value="{{$template!=null ? $template->color : '#8fd2d0'}}" />
+								<input class="bg-transparent border-none outline-none text-inherit" id="color_value" name="color_value" value="{{$template!=null ? $template->color : '#8fd2d0'}}"/>
 							</div>
 						</div>
 

@@ -57,16 +57,18 @@
                 <td>{{$entry->title}}</td>
                 <td class="text-[11px]">
 					<span class="inline-block bg-black/[0.06] px-[6px] py-[3px] rounded-sm dark:bg-white/[0.06]">
-						@foreach(array_unique(json_decode($entry->response)->language) as $lang)
-							{{ country2flag(explode("-", $lang)[1])}}
-						@endforeach
-						{{$lang}}
+						{{-- @if (is_array(json_decode($entry->response)->language) || is_object(json_decode($entry->response)->language))
+                            @foreach(array_unique(json_decode($entry->response)->language) as $lang)
+                            {{ country2flag(explode("-", $lang)[1])}}
+                            @endforeach
+                        @endif
+						{{$lang}} --}}
 					</span>
                 </td>
                 <td>
-                    @foreach(array_unique(json_decode($entry->response)->voices) as $voice)
+                   {{-- @foreach(array_unique(json_decode($entry->response)->voices) as $voice)
                         {{getVoiceNames($voice)}}
-                    @endforeach
+                    @endforeach--}}
                 </td>
                 <td>
 					<span>{{$entry->created_at->format('M d, Y')}}, <span class="opacity-60">{{$entry->created_at->format('H:m')}}</span></span>
@@ -103,9 +105,9 @@
     </table>
 </div>
 
-<div class="float-right m-4">
+{{--<div class="float-right m-4">
 {{ $userOpenai->links() }}
-</div>
+</div>--}}
 
 @else
 <div class="table-responsive">
@@ -153,6 +155,9 @@
         
     </table>
 </div>
+         <div class="float-right m-4">
+              {{ $userOpenai->links() }}
+         </div>
 @endif
 @if($openai->slug=='ai_image_generator')
 <script>
