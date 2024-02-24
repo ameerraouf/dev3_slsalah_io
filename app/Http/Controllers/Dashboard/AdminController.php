@@ -41,6 +41,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Cashier\Subscription;
 use App\Models\Coupon;
 use App\Models\Favourite;
+use Exception;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -1004,57 +1005,68 @@ class AdminController extends Controller
     }
     public function frontendSectionSettingsSave(Request $request){
 
-        if (env('APP_STATUS') != 'Demo'){
-            $settings = FrontendSectionsStatusses::first();
-            $settings->features_active = $request->features_active;
-            $settings->features_title = $request->features_title;
-            $settings->features_description = $request->features_description;
+        try {
+            if (env('APP_STATUS') != 'Demo'){
 
-            $settings->generators_active = $request->generators_active;
+                $settings = FrontendSectionsStatusses::first();
+                $settings->features_active = $request->features_active;
+                $settings->features_title = $request->features_title;
+                $settings->features_description = $request->features_description;
+    
+                $settings->generators_active = $request->generators_active;
+    
+                $settings->who_is_for_active = $request->who_is_for_active;
+    
+                $settings->custom_templates_active = $request->custom_templates_active;
+                $settings->custom_templates_subtitle_one = $request->custom_templates_subtitle_one;
+                $settings->custom_templates_subtitle_two = $request->custom_templates_subtitle_two;
+                $settings->custom_templates_title = $request->custom_templates_title;
+                $settings->custom_templates_description = $request->custom_templates_description;
+    
+                $settings->tools_active = $request->tools_active;
+                $settings->tools_title = $request->tools_title;
+                $settings->tools_description = $request->tools_description;
+    
+                $settings->how_it_works_active = $request->how_it_works_active;
+                $settings->how_it_works_title = $request->how_it_works_title;
+    
+                $settings->testimonials_active = $request->testimonials_active;
+                $settings->testimonials_title = $request->testimonials_title;
+                $settings->testimonials_subtitle_one = $request->testimonials_subtitle_one;
+                $settings->testimonials_subtitle_two = $request->testimonials_subtitle_two;
+    
+                $settings->pricing_active = $request->pricing_active;
+                $settings->pricing_title = $request->pricing_title;
+                $settings->pricing_description = $request->pricing_description;
+                $settings->pricing_save_percent = $request->pricing_save_percent;
+    
+                $settings->faq_active = $request->faq_active;
+                $settings->faq_title = $request->faq_title;
+                $settings->faq_subtitle = $request->faq_subtitle;
+                $settings->faq_text_one = $request->faq_text_one;
+                $settings->faq_text_two = $request->faq_text_two;
+    
+                $settings->blog_active = $request->blog_active;
+                $settings->blog_title = $request->blog_title;
+                $settings->blog_subtitle = $request->blog_subtitle;
+                $settings->blog_posts_per_page = $request->blog_posts_per_page;
+                $settings->blog_button_text = $request->blog_button_text;
+                $settings->blog_a_title = $request->blog_a_title;
+                $settings->blog_a_subtitle = $request->blog_a_subtitle;
+                $settings->blog_a_description = $request->blog_a_description;
+                $settings->blog_a_posts_per_page = $request->blog_a_posts_per_page;
+    
+                $settings->save();
+            }
 
-            $settings->who_is_for_active = $request->who_is_for_active;
+        } catch(Exception $e) {
+            return response([
+                "message" => 'error',
+                'errors' => [
+                    'failds' => 'يجب ملئ كل الحقول المطلوبة'
+                ],
 
-            $settings->custom_templates_active = $request->custom_templates_active;
-            $settings->custom_templates_subtitle_one = $request->custom_templates_subtitle_one;
-            $settings->custom_templates_subtitle_two = $request->custom_templates_subtitle_two;
-            $settings->custom_templates_title = $request->custom_templates_title;
-            $settings->custom_templates_description = $request->custom_templates_description;
-
-            $settings->tools_active = $request->tools_active;
-            $settings->tools_title = $request->tools_title;
-            $settings->tools_description = $request->tools_description;
-
-            $settings->how_it_works_active = $request->how_it_works_active;
-            $settings->how_it_works_title = $request->how_it_works_title;
-
-            $settings->testimonials_active = $request->testimonials_active;
-            $settings->testimonials_title = $request->testimonials_title;
-            $settings->testimonials_subtitle_one = $request->testimonials_subtitle_one;
-            $settings->testimonials_subtitle_two = $request->testimonials_subtitle_two;
-
-            $settings->pricing_active = $request->pricing_active;
-            $settings->pricing_title = $request->pricing_title;
-            $settings->pricing_description = $request->pricing_description;
-            $settings->pricing_save_percent = $request->pricing_save_percent;
-
-            $settings->faq_active = $request->faq_active;
-            $settings->faq_title = $request->faq_title;
-            $settings->faq_subtitle = $request->faq_subtitle;
-            $settings->faq_text_one = $request->faq_text_one;
-            $settings->faq_text_two = $request->faq_text_two;
-
-            $settings->blog_active = $request->blog_active;
-            $settings->blog_title = $request->blog_title;
-            $settings->blog_subtitle = $request->blog_subtitle;
-            $settings->blog_posts_per_page = $request->blog_posts_per_page;
-            $settings->blog_button_text = $request->blog_button_text;
-            $settings->blog_a_title = $request->blog_a_title;
-            $settings->blog_a_subtitle = $request->blog_a_subtitle;
-            $settings->blog_a_description = $request->blog_a_description;
-            $settings->blog_a_posts_per_page = $request->blog_a_posts_per_page;
-
-            $settings->save();
-
+            ], 422);
         }
 
     }

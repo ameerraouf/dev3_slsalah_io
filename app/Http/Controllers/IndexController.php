@@ -41,7 +41,7 @@ class IndexController extends Controller
         $tools = FrontendTools::all();
         $futures = FrontendFuture::all();
         $testimonials = Testimonials::all();
-        $howitWorks = HowitWorks::orderBy('order', 'ASC')->limit(3)->get();
+        $howitWorks = HowitWorks::orderBy('order', 'ASC')->get();
         $howitWorksDefaults = self::howitWorksDefaults();
         $clients = Clients::all();
         $who_is_for = FrontendForWho::all();
