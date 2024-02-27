@@ -353,6 +353,19 @@ class SettingsController extends Controller
     }
 
     public function invoiceSave(Request $request){
+
+        $request->validate([
+            'invoice_name'      => 'required|string',
+            'invoice_website'   => 'required|url',
+            'invoice_address'   => 'required|string',
+            'invoice_city'      => 'required|string',
+            'invoice_state'     => 'required|string',
+            'invoice_postal'    => 'required|string',
+            'invoice_country'   => 'required|string',
+            'invoice_phone'     => 'required|string',
+            'invoice_vat'       => 'numeric|required'
+        ]);
+
         $settings = Setting::first();
         // TODO SETTINGS
         if (env('APP_STATUS') != 'Demo') {
@@ -425,6 +438,11 @@ class SettingsController extends Controller
     }
 
     public function smtpTest(Request $request) {
+
+        $request->validate([
+            'test_email' => 'required|email'
+        ]);
+
         $toEmail =  $request->test_email;
         $toName = 'Test Email';
 

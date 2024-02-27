@@ -158,6 +158,10 @@ class BlogController extends Controller
 
     public function blogAddOrUpdateSave(Request $request){
 
+        $request->validate([
+            'content' => 'required'
+        ]);
+
         if ($request->post_id != 'undefined'){
             $post = Blog::where('id', $request->post_id)->firstOrFail();
         } else {

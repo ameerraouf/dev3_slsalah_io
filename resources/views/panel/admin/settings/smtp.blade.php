@@ -94,6 +94,9 @@
                                 <div class="mb-3">
                                     <label class="form-label">{{__('Test Email')}}</label>
                                     <input type="text" class="form-control" name="test_email" placeholder="Email to send test email.">
+                                    @error('test_email')
+                                    <p class = 'text-danger form-text mb-0'>{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

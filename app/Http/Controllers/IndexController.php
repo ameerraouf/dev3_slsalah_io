@@ -52,7 +52,6 @@ class IndexController extends Controller
         if ($setting->frontend_additional_url != null){
             return Redirect::to($setting->frontend_additional_url);
         }
-
         return view('index', compact(
             'templates',
             'plansPrepaid',
