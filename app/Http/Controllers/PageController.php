@@ -49,6 +49,12 @@ class PageController extends Controller
 
     public function pageAddOrUpdateSave(Request $request){
 
+        $request->validate([
+            'title'     => 'required|string',
+            'slug'      => 'required|string',
+            'content'   => 'required|string',
+        ]);
+
         if ($request->page_id != 'undefined'){
             $page = Page::where('id', $request->page_id)->firstOrFail();
         }else{

@@ -47,9 +47,9 @@
 				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
 			</span>
 			@if((int)$totalWords >= 0)
-			<strong>{{number_format($totalWords)}}</strong> {{__('Word Tokens')}}
+			<strong class="me-2">{{number_format($totalWords)}}</strong> {{ __('Word Tokens')}}
 			@else
-			<strong>{{__('Unlimited')}}</strong> {{__('Word Tokens')}}
+			<strong class="me-2">{{__('Unlimited')}}</strong> {{ __('Word Tokens')}}
 			@endif
 		</li>
 		<li class="flex items-center mb-4 text-start">
@@ -57,9 +57,9 @@
 				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
 			</span>
 			@if((int)$totalImages >= 0)
-			<strong>{{number_format($totalImages)}}</strong> {{__('Image Tokens')}}
+			<strong class="me-2">{{number_format($totalImages)}}</strong> {{__('Image Tokens')}}
 			@else
-			<strong>{{__('Unlimited')}}</strong> {{__('Image Tokens')}}
+			<strong class="me-2">{{__('Unlimited')}}</strong> {{__('Image Tokens')}}
 			@endif
 		</li>
 		@if ( !empty( $inactiveFeatures ) )

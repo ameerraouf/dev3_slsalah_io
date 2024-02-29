@@ -41,6 +41,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Cashier\Subscription;
 use App\Models\Coupon;
 use App\Models\Favourite;
+use App\Models\OpenaiTemplateFilter;
 use Exception;
 use Illuminate\Support\Facades\Validator;
 
@@ -406,13 +407,19 @@ class AdminController extends Controller
         $template->questions = $questions;
         $template->type = 'text';
         $template->custom_template = 1;
-        $template->filters = $request->filters;
-        foreach (explode( ',', $request->filters) as $filter){
-            if (OpenaiGeneratorFilter::where('name', $filter)->first() == null){
-                $newFilter = new OpenaiGeneratorFilter();
-                $newFilter->name = $filter;
-                $newFilter->save();
-            }
+        //$template->filter_id = $request->filters;
+        $filters = explode(',', $request->filters);
+        OpenaiTemplateFilter::where('template_id', $template->id)->delete();
+        foreach ($filters as $filter){
+            // if (OpenaiGeneratorFilter::where('name', $filter)->first() == null){
+            //     $newFilter = new OpenaiGeneratorFilter();
+            //     $newFilter->name = $filter;
+            //     $newFilter->save();
+            // }
+            OpenaiTemplateFilter::create([
+                'template_id' => $template->id,
+                'filter_id'   => $filter
+            ]);
         }
         $template->premium = $request->premium;
 

@@ -77,7 +77,7 @@
 							</label>
 							<select class="form-control select2" name="filters" id="filters" multiple>
                                 @foreach($filters as $filter)
-                                    <option value="{{$filter->name}}" {{isset($template) && isset($template->filters) && in_array($filter->name, explode(',', $template->filters)) ? 'selected' : ''}}>
+                                    <option value="{{$filter->id}}" {{isset($template) && $template->checkFilter($filter->id, $template->id)  ? 'selected' : ''}}>
                                         {{$filter->name}}
                                     </option>
                                 @endforeach

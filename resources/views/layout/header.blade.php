@@ -122,11 +122,11 @@
             </div>
             @else
             <x-button link="{{ LaravelLocalization::localizeUrl( route('login') ) }}"
-                label="{!! __($fSetting->sign_in) !!}" type="outline"
+                label="{{ __('Sign in') }}" type="outline"
                 border="border-[2px] border-white !border-opacity-10 group-[.lqd-is-sticky]/header:border-black"
                 text="text-white group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" />
             <x-button link="{{ LaravelLocalization::localizeUrl( route('register') ) }}"
-                label="{!! __($fSetting->join_hub) !!}" border="border-[2px] border-white !border-opacity-0"
+                label="{!! __('Sign up') !!}" border="border-[2px] border-white !border-opacity-0"
                 bg="bg-white !bg-opacity-10 hover:!bg-opacity-100  group-[.lqd-is-sticky]/header:hover:!bg-opacity-100"
                 text="text-white group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" />
             @endauth

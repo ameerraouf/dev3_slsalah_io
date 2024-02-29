@@ -12,6 +12,8 @@ use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Laravel\Socialite\Facades\Socialite;
@@ -149,11 +151,22 @@ class AuthenticationController extends Controller
     public function registerStore(Request $request)
     {
 
-        $request->validate([
+        $lang = session('locale');
+
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Password::defaults()],
+        ];
+
+        $validator = Validator::validate($request->all(), $rules, [
+            'name.required'         => trans('request.messages.required', ['input' => trans('Name', [], $lang)], $lang),
+            'surname.required'      => trans('request.messages.required', ['input' => trans('Last Name', [], $lang)], $lang),
+            'email.required'        => trans('request.messages.required', ['input' => trans('Email', [], $lang)], $lang),
+            'password.required'     => trans('request.messages.required', ['input' => trans('Password', [], $lang)], $lang),
+            'password.confirmed'    => trans('request.messages.confirmed', ['input' => trans('Password', [], $lang)], $lang),
+            'password.min'          => trans('request.messages.min', ['input' => trans('Password', [], $lang), 'count' => 8], $lang),
         ]);
 
         $affCode = null;

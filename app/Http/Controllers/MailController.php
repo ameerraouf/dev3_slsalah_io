@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 
@@ -24,6 +25,13 @@ class MailController extends Controller
 
 
     public function sendPasswordResetMail(Request $request){
+
+        
+        $lang = session('locale');
+
+        $validator = Validator::validate($request->all(), ['email' => 'required|string|email'], [
+            'email.required' => trans('request.messages.required', ['input' => trans('Email', [], $lang)], $lang),
+        ]);
         $user = User::where('email', $request->email)->first();
         if ($user != null){
             $user->password_reset_code = Str::random(67);

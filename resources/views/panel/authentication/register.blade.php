@@ -99,7 +99,7 @@
 								</div>
 								<div class="row mt-[35px]">
 									<div class="col">
-										<button id="RegisterFormButton" class="btn btn-primary w-100">{{__('Sign up')}}</button>
+										<button id="RegisterFormButton" class="btn btn-primary w-100">{{__('global.Sign Up')}}</button>
 									</div>
 								</div>
 							</form>

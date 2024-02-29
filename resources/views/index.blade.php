@@ -188,7 +188,9 @@
 				<div class="inline-flex flex-wrap items-center gap-2 p-[0.35rem] mx-auto mb-10 text-sm font-semibold leading-none border rounded-lg max-md:justify-center">
 					<x-tabs-trigger target=".templates-all" style="2" label="{{__('All')}}" active="true" />
                     @foreach($filters as $filter)
-					<x-tabs-trigger target=".templates-{{\Illuminate\Support\Str::slug($filter->name)}}" style="2" label="{{__($filter->name)}}" />
+					@if($filter->checkFilter($filter->id))
+					<x-tabs-trigger target=".templates-{{\Illuminate\Support\Str::slug($filter->id)}}" style="2" label="{{__($filter->name)}}" />
+					@endif
                     @endforeach
 				</div>
 			</div>
@@ -198,7 +200,14 @@
 					@if($item->active != 1)
 						@continue
 					@endif
-					<x-box wrapperClass="templates-all templates-{{\Illuminate\Support\Str::slug($item->filters)}}" style="2" title="{{__($item->title)}}" desc="{{__($item->description)}}">
+					@php
+						$class = '';
+
+						foreach($item->getFilter as $filter) {
+							$class .= 'templates-' .  $filter->filter_id . " ";
+						}
+					@endphp
+					<x-box wrapperClass="templates-all {{ $class }}" style="2" title="{{__($item->title)}}" desc="{{__($item->description)}}">
 						<x-slot name="image">
 							<span class="inline-flex items-center justify-center w-11 h-11 mb-4 rounded-lg bg-gradient-to-bl from-[#f0f0f2] to-[#d7d7d9] [&_svg]:w-6 [&_svg]:h-5 [&_svg]:fill-[#7c7c7e] [&_path]:fill-inherit">
 								{!! $item->image !!}
@@ -210,7 +219,6 @@
 				</div>
 				<div class="h-[230px] absolute bottom-0 inset-x-0 z-10 bg-gradient-to-t from-body-bg to-transparent templates-cards-overlay"></div>
 			</div>
-			{{count($templates)}}
 			<div class="relative z-20 mt-2 text-center">
 				<button class="text-[#5A4791] font-semibold text-[14px] templates-show-more">
 					<span class="inline-grid rounded-lg place-content-center w-7 h-7 bg-[#885EFE] bg-opacity-10 mr-1">
