@@ -136,13 +136,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label for="newFolderName" class="form-label">{{__('New Folder Name:')}}</label>
+                    <label for="newFolderName" class="form-label">{{__('global.New Folder Name')}}:</label>
                     <input type="text" class="form-control" id="newFolderName" name="newFolderName" required>
                     <input type="hidden" class="form-control" id="modalFolderId" name="modalFolderId" readonly>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
-                    <button type="button" class="btn btn-primary" @if(env('APP_STATUS') == 'Demo')  onclick="return toastr.info('This feature is disabled in Demo version.')" @else onclick="renameFolder()" @endif>{{__('Save changes')}}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('global.Cancel')}}</button>
+                    <button type="button" class="btn btn-primary" @if(env('APP_STATUS') == 'Demo')  onclick="return toastr.info('This feature is disabled in Demo version.')" @else onclick="renameFolder()" @endif>{{__('global.Save changes')}}</button>
                 </div>
             </div>
         </div>
@@ -178,16 +178,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>{{__('Do you want to delete all files inside the folder?')}}</p>
+                    <p>{{__('global.Do you want to delete all files inside the folder?')}}</p>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="deleteAllFilesCheckbox">
                         <label class="form-check-label" for="deleteAllFilesCheckbox">
-                            {{__('Delete all files')}}
+                            {{__('global.Delete all files')}}
                         </label>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Cancel')}}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('global.Cancel')}}</button>
                     <button type="button" class="btn btn-primary" @if(env('APP_STATUS') == 'Demo')  onclick="return toastr.info('This feature is disabled in Demo version.')" @else onclick="confirmDelete()" @endif>{{__('Delete')}}</button>
                 </div>
             </div>
@@ -205,11 +205,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <label for="newFolderName" class="form-label">{{__('New Folder Name:')}}</label>
+                        <label for="newFolderName" class="form-label">{{__('global.New Folder Name')}}</label>
                         <input type="text" class="form-control"  name="newFolderName" required>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Cancel')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('global.Cancel')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Add')}}</button>
                     </div>
                 </form>

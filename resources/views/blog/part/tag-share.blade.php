@@ -1,7 +1,7 @@
 <div class="flex justify-between mt-20">
     <div class="flex items-center gap-2 text-[13px] font-normal">
         @if($post->tag)
-        <div class="text-black">{{__('Tags:')}}</div>
+        <div class="text-black">{{__('global.Tags')}}:</div>
         <div class="flex space-x-1">
             @foreach (explode(',', $post->tag) as $tag)
             <a class="bg-gray-200 rounded-md px-3 py-1 flex items-center hover:text-black"
@@ -49,6 +49,6 @@
                 </svg>
             </a>
         </div>
-        <div class="text-gray-500 text-[11px] uppercase">{{__('Share on')}}</div>
+        <div class="text-gray-500 text-[11px] uppercase">{{__('global.Share on')}}</div>
     </div>
 </div>

@@ -9,7 +9,7 @@
                     <path d="M5 12l6 -6"></path>
                  </svg>
                 <div>
-                    <div class="uppercase text-[11px] letter tracking-wider mb-2">{{__('Previus Article')}}</div>
+                    <div class="uppercase text-[11px] letter tracking-wider mb-2">{{__('global.Previus Article')}}</div>
                     <div class="text-black">{{$previousPost->title}}</div>
                 </div>
             </a>
@@ -25,7 +25,7 @@
                     <path d="M13 6l6 6"></path>
                  </svg>
                 <div>
-                    <div class="uppercase text-[11px] letter tracking-wider mb-2">{{__('Next Article')}}</div>
+                    <div class="uppercase text-[11px] letter tracking-wider mb-2">{{__('global.Next Article')}}</div>
                     <div class="text-black">{{$nextPost->title}}</div>
                 </div>
             </a>

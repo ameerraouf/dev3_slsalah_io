@@ -22,7 +22,7 @@
                     <div class="dropdown-menu dropdown-menu-end [&.show]:z-20">
                         <a href="button"  data-bs-toggle="modal" data-bs-target="#renameModal" data-folder-id="{{ $folder->id }}" class="flex items-center gap-2 p-2 border-none rounded-md bg-[transparent] text-[12px] !no-underline font-medium text-heading hover:bg-slate-100 group-[.theme-dark]/body:hover:bg-zinc-900">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"></path> <path d="M13.5 6.5l4 4"></path> <path d="M16 18h4"></path> </svg>
-                            {{__('Rename')}}
+                            {{__('global.Rename')}}
                         </a>
                         <a href="javascript:void(0)" onclick="removeFolder({{ $folder->id }})" class="flex items-center gap-2 p-2 border-none rounded-md bg-[transparent] text-[12px] !no-underline font-medium text-heading hover:bg-slate-100 group-[.theme-dark]/body:hover:bg-zinc-900">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" stroke-width="2" stroke="var(--tblr-red)" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path> <path d="M9 12l6 0"></path> </svg>
