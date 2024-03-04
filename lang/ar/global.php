@@ -23,4 +23,6 @@ return [
     'Save changes' => 'حفظ التغيرات',
     'Do you want to delete all files inside the folder?' => 'هل انت متاكد انك تريد حذف المجلد؟',
     'Delete all files' => 'حذف كل الملفات',
+    'Move File' => 'نقل ملف',
+    'Select Folder' => 'المجلد المحدد'
 ];

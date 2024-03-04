@@ -132,7 +132,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="renameModalLabel">{{__('Rename Folder')}}</h5>
+                    <h5 class="modal-title" id="renameModalLabel">{{__('global.Rename Folder')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -224,12 +224,12 @@
                 <form action="{{route('dashboard.user.openai.documents.move-to-folder')}}" method="post">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="moveFileModalLabel">{{__('Move File')}}</h5>
+                        <h5 class="modal-title" id="moveFileModalLabel">{{__('global.Move File')}}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <input type="hidden" name="fileslug" id="fileslug"/>
-                        <label for="newFolderName" class="form-label">{{__('Select Folder:')}}</label>
+                        <label for="newFolderName" class="form-label">{{__('global.Select Folder')}}:</label>
                         <select class="form-control" name="selectedFolderId" required>
                             @foreach (auth()->user()->folders ?? [] as $folder)
                                 <option value="{{$folder->id}}">{{$folder->name}}</option>
@@ -237,7 +237,7 @@
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Cancel')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('global.Cancel')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('Move')}}</button>
                     </div>
                 </form>

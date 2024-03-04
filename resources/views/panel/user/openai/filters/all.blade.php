@@ -113,8 +113,8 @@
                                 <td class="sort-cost text-[13px]" data-cost="{{trim($entry->credits)}}" >{{$entry->credits}}</td>
                                 <td class="whitespace-nowrap">
                                     <div class="flex items-center justify-end !gap-2">
-                                        <a onclick="return favoriteTemplate({{$entry->generator->id}});" id="favorite_area_{{$entry->generator->id}}" class="btn relative z-10 w-[36px] shrink-0 h-[36px] p-0 border hover:bg-[var(--tblr-primary)] hover:text-white" title="المفضلة">
-                                            @if(!isFavorited($entry->generator->id))
+                                        <a onclick="return favoriteTemplate({{$entry->id}});" id="favorite_area_{{$entry->id}}" class="btn relative z-10 w-[36px] shrink-0 h-[36px] p-0 border hover:bg-[var(--tblr-primary)] hover:text-white" title="المفضلة">
+                                            @if(!isFavorited($entry->id))
                                             <svg width="16" height="15" viewBox="0 0 16 15" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7.99989 11.8333L3.88522 13.9966L4.67122 9.41459L1.33789 6.16993L5.93789 5.50326L7.99522 1.33459L10.0526 5.50326L14.6526 6.16993L11.3192 9.41459L12.1052 13.9966L7.99989 11.8333Z" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>

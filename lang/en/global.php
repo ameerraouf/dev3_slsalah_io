@@ -23,6 +23,8 @@ return [
     'Save changes'  => 'Save changes',
     'Do you want to delete all files inside the folder?' => 'Do you want to delete all files inside the folder?',
     'Delete all files' => 'Delete all files',
+    'Move File' => 'Move File',
+    'Select Folder' => 'Select Folder'
 
 
 ];

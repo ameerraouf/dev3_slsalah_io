@@ -43,7 +43,7 @@ use Stripe\PaymentIntent;
 use Stripe\Plan;
 use enshrined\svgSanitize\Sanitizer;
 use App\Models\OpenaiGeneratorChatCategory;
-
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -370,15 +370,30 @@ class UserController extends Controller
     }
 
     public function updateFolder(Request $request, $folder) {
-        $request->validate([
+        // $request->validate([
+        //     'newFolderName' => 'required|string|max:255',
+        // ]);
+
+        $validator = Validator::make($request->all(), [
             'newFolderName' => 'required|string|max:255',
+        ],
+        [
+            'required' => trans('request.messages.required', [':input' => 'اسم المجلد الجديد'],session('locale')),
         ]);
 
-        $folder = Folders::findOrFail($folder);
-        $folder->name = $request->input('newFolderName');
-        $folder->save();
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => implode(" ", $validator->errors()->all()),
+                'errors' => $validator->errors()->all(),
+            ], 422);
+        }else {
 
-        return response()->json(['message' => __('Folder name updated successfully')]);
+            $folder = Folders::findOrFail($folder);
+            $folder->name = $request->input('newFolderName');
+            $folder->save();
+    
+            return response()->json(['message' => __('Folder name updated successfully')]);
+        }
     }
 
     public function updateFile(Request $request, $slug) {
