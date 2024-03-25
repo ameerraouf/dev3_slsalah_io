@@ -433,6 +433,7 @@ class AdminController extends Controller
     }
 
     public function openAICategoriesAddOrUpdate($id = null){
+        
         if ($id == null){
             $item = null;
         }else{
@@ -448,6 +449,10 @@ class AdminController extends Controller
     }
 
     public function openAICategoriesAddOrUpdateSave(Request $request){
+
+        $this->validate($request,[
+            'name' => 'required',
+        ]);
 
         if ($request->item_id != 'undefined'){
             $item = OpenaiGeneratorFilter::where('id', $request->item_id)->firstOrFail();
@@ -741,6 +746,10 @@ class AdminController extends Controller
 
 
     public function clientsSave(Request $request){
+        $this->validate($request, [
+            'alt' => 'required',
+            'title' => 'required'
+        ]);
         if ($request->client_id != 'undefined'){
             $client = Clients::where('id', $request->client_id)->firstOrFail();
         }else{
@@ -1110,6 +1119,10 @@ class AdminController extends Controller
     }
 
     public function frontendFaqcreateOrUpdateSave(Request $request){
+        $this->validate($request, [
+            'question' => 'required',
+            'answer' => 'required',
+        ]);
         if ($request->faq_id != 'undefined'){
             $faq = Faq::where('id', $request->faq_id)->firstOrFail();
         }else{
@@ -1148,6 +1161,10 @@ class AdminController extends Controller
     }
 
     public function frontendToolscreateOrUpdateSave(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'description'=>'required'
+        ]);
         if ($request->item_id != 'undefined'){
             $item = FrontendTools::where('id', $request->item_id)->firstOrFail();
         }else{

@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', __('F.A.Q'))
+@section('title', __('Feature Add Or Edit'))
 
 @section('content')
     <div class="page-header">
@@ -13,7 +13,7 @@
                         {{__('Back to dashboard')}}
                     </a>
                     <h2 class="page-title mb-2">
-                        {{__('Features')}}
+                        {{__('Feature Add Or Edit')}}
                     </h2>
                 </div>
             </div>
@@ -31,13 +31,13 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Title')}}</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? $item->title : null}}" required>
+                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Text')}}</label>
-                                            <textarea name="description" id="description" class="form-control" rows="10" required>{{$item!=null ? $item->description : null}}</textarea>
+                                            <textarea name="description" id="description" class="form-control" rows="10" required>{{$item!=null ? __($item->description) : null}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

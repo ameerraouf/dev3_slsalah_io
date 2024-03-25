@@ -95,21 +95,21 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Custom Templates Subtitle One')}}</label>
-                                <input type="text" class="form-control" id="custom_templates_subtitle_one" name="custom_templates_subtitle_one" value="{{$fSectSettings->custom_templates_subtitle_one}}">
+                                <input type="text" class="form-control" id="custom_templates_subtitle_one" name="custom_templates_subtitle_one" value="{{__($fSectSettings->custom_templates_subtitle_one)}}">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Custom Templates Subtitle Two')}}</label>
-                                <input type="text" class="form-control" id="custom_templates_subtitle_two" name="custom_templates_subtitle_two" value="{{$fSectSettings->custom_templates_subtitle_two}}">
+                                <input type="text" class="form-control" id="custom_templates_subtitle_two" name="custom_templates_subtitle_two" value="{{__($fSectSettings->custom_templates_subtitle_two)}}">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Custom Templates Title')}}</label>
-                                <input type="text" class="form-control" id="custom_templates_title" name="custom_templates_title" value="{{$fSectSettings->custom_templates_title}}">
+                                <input type="text" class="form-control" id="custom_templates_title" name="custom_templates_title" value="{{__($fSectSettings->custom_templates_title)}}">
                             </div>
                         </div>
 
@@ -170,7 +170,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('How It Works Title')}}</label>
-                                <input type="text" class="form-control" id="how_it_works_title" name="how_it_works_title" value="{{$fSectSettings->how_it_works_title}}">
+                                <input type="text" class="form-control" id="how_it_works_title" name="how_it_works_title" value="{{__($fSectSettings->how_it_works_title)}}">
                             </div>
                         </div>
 
@@ -192,21 +192,21 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Testimonials Title')}}</label>
-                                <input type="text" class="form-control" id="testimonials_title" name="testimonials_title" value="{{$fSectSettings->testimonials_title}}">
+                                <input type="text" class="form-control" id="testimonials_title" name="testimonials_title" value="{{__($fSectSettings->testimonials_title)}}">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Testimonials Subtitle One')}}</label>
-                                <input type="text" class="form-control" id="testimonials_subtitle_one" name="testimonials_subtitle_one" value="{{$fSectSettings->testimonials_subtitle_one}}">
+                                <input type="text" class="form-control" id="testimonials_subtitle_one" name="testimonials_subtitle_one" value="{{__($fSectSettings->testimonials_subtitle_one)}}">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Testimonials Subtitle Two')}}</label>
-                                <input type="text" class="form-control" id="testimonials_subtitle_two" name="testimonials_subtitle_two" value="{{$fSectSettings->testimonials_subtitle_two}}">
+                                <input type="text" class="form-control" id="testimonials_subtitle_two" name="testimonials_subtitle_two" value="{{__($fSectSettings->testimonials_subtitle_two)}}">
                             </div>
                         </div>
 
@@ -228,7 +228,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Pricing Title')}}</label>
-                                <input type="text" class="form-control" id="pricing_title" name="pricing_title" value="{{$fSectSettings->pricing_title}}">
+                                <input type="text" class="form-control" id="pricing_title" name="pricing_title" value="{{__($fSectSettings->pricing_title)}}">
                             </div>
                         </div>
 

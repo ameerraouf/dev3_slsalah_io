@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Add or Edit Chat Template')
+@section('title', __('Add or Edit Chat Template'))
 @section('additional_css')
     <link href="/assets/select2/select2.min.css" rel="stylesheet" />
 @endsection

@@ -108,7 +108,7 @@
                                     <div class="col-md-12 mb-3">
                                         <div class="bg-blue-100 text-blue-600 rounded-xl !p-3 !mt-2 dark:bg-blue-600/20 dark:text-blue-200">
                                             <svg class="inline !me-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path> <path d="M12 9h.01"></path> <path d="M11 12h1v4h1"></path> </svg>
-                                            Enter "-1" for unlimited usage.
+                                            {{__('Enter "-1" for unlimited usage.')}}
                                         </div>
                                     </div>
                                 </div>

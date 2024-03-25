@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Frontend Settings')
+@section('title', __('Frontend Settings'))
 
 @section('content')
     <div class="page-header">
@@ -84,7 +84,7 @@
                         <div class="col-md-12 deprecated hidden">
                             <div class="mb-3">
                                 <label class="form-label">{{__('PreHeader Title')}}</label>
-                                <input type="text" class="form-control" id="header_title" name="header_title" value="{{$fSetting->header_title}}">
+                                <input type="text" class="form-control" id="header_title" name="header_title" value="{{__($fSetting->header_title)}}">
                             </div>
                         </div>
 
@@ -126,7 +126,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Hero Title Text Rotator')}}</label>
-                                <input type="text" class="form-control" id="hero_title_text_rotator" name="hero_title_text_rotator" value="{{$fSetting->hero_title_text_rotator}}">
+                                <input type="text" class="form-control" id="hero_title_text_rotator" name="hero_title_text_rotator" value="{{__($fSetting->hero_title_text_rotator)}}">
                                 <div class="bg-blue-100 text-blue-600 rounded-xl !p-3 !mt-2 dark:bg-blue-600/20 dark:text-blue-200">
                                     <svg class="inline !me-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path> <path d="M12 9h.01"></path> <path d="M11 12h1v4h1"></path> </svg>
                                     {{__('Please use comma seperated like; Generator,Chatbot,Assistant')}}
@@ -150,7 +150,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Hero Button')}}</label>
-                                <input type="text" class="form-control" id="hero_button" name="hero_button" value="{{$fSetting->hero_button}}">
+                                <input type="text" class="form-control" id="hero_button" name="hero_button" value="{{__($fSetting->hero_button)}}">
                             </div>
                         </div>
 
@@ -256,7 +256,7 @@
                         <div class="col-md-12 floating-button-input">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Floating Button Small Text')}}</label>
-                                <input type="text" class="form-control" id="floating_button_small_text" name="floating_button_small_text" value="{{$fSetting->floating_button_small_text}}">
+                                <input type="text" class="form-control" id="floating_button_small_text" name="floating_button_small_text" value="{{__($fSetting->floating_button_small_text)}}">
                             </div>
                         </div>
                         <div class="col-md-12 floating-button-input">

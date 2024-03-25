@@ -15,7 +15,7 @@
                     </a>
 
                     <h2 class="page-title mb-2">
-                        {{__('Manage How it Works')}}
+                        {{__('How it Works')}}
                     </h2>
                 </div>
             </div>

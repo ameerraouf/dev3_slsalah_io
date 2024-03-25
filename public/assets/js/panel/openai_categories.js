@@ -21,7 +21,7 @@ function categorySave( item_id ) {
             toastr.success('Template Saved Succesfully')
             location.href = '/dashboard/admin/openai/categories';
             document.getElementById( "custom_template_button" ).disabled = false;
-            document.getElementById( "custom_template_button" ).innerHTML = "Save";
+            document.getElementById( "custom_template_button" ).innerHTML = navigator.language == 'en' ? "Save" : 'حفظ';
         },
         error: function ( data ) {
             var err = data.responseJSON.errors;
@@ -29,7 +29,7 @@ function categorySave( item_id ) {
                 toastr.error( value );
             } );
             document.getElementById( "custom_template_button" ).disabled = false;
-            document.getElementById( "custom_template_button" ).innerHTML = "Save";
+            document.getElementById( "custom_template_button" ).innerHTML = navigator.language == 'en' ? "Save" : 'حفظ';
         }
     } );
     return false;

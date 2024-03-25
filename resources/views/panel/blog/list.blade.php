@@ -55,13 +55,13 @@
                             <tr>
                                 <td class="sort-name">
                                     <a target="_blank" class="text-black font-normal" href="{{ LaravelLocalization::localizeUrl( url('/blog', $entry->slug) ) }}">
-                                        {{$entry->title}}
+                                        {{__($entry->title)}}
                                     </a>
                                 </td>
                                 <td class="sort-name">
                                     @if($entry->category)
                                         @foreach (explode(',', $entry->category) as $cat)
-                                        <a target="_blank" class="text-black font-normal" href="{{ LaravelLocalization::localizeUrl( url('/blog/category', $cat) ) }}">{{$cat}}</a>
+                                        <a target="_blank" class="text-black font-normal" href="{{ LaravelLocalization::localizeUrl( url('/blog/category', $cat) ) }}">{{__($cat)}}</a>
                                         @endforeach
                                     @endif
                                 </td>

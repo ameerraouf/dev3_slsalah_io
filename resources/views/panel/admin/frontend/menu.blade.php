@@ -75,10 +75,10 @@
                                             </div>
                                         </div>
                                         ',
-                                        $menu_item['title'],
+                                        __($menu_item['title']),
                                         __('Title'),
                                         __('URL'),
-                                        $menu_item['url'],
+                                        __($menu_item['url']),
                                         __('Open In New Tab'),
                                         ($menu_item['target'] === false ? '' : 'checked')
                                     );

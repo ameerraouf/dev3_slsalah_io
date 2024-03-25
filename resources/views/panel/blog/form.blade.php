@@ -49,7 +49,7 @@
 								{{__('Post Title')}}
 								<x-info-tooltip text="{{__('Add a post title.')}}" />
 							</label>
-							<input type="text" class="form-control" id="title" name="title" value="{{$blog!=null ? $blog->title : null}}">
+							<input type="text" class="form-control" id="title" name="title" value="{{$blog!=null ? __($blog->title) : null}}">
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">

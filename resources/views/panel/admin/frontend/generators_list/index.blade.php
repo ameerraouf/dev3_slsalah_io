@@ -26,9 +26,9 @@
                 <div class="card-header d-flex justify-content-between">
                     <h4>{{__('Generators List')}}</h4>
                     @if(env('APP_STATUS') == 'Demo')
-                        <a class="btn btn-primary" onclick="return toastr.info('This feature is disabled in Demo version.')" >Add New</a>
+                        <a class="btn btn-primary" onclick="return toastr.info('This feature is disabled in Demo version.')" >{{__('Add New')}}</a>
                     @else
-                        <a class="btn btn-primary" href="{{route('dashboard.admin.frontend.generatorlist.createOrUpdate')}}">Add New</a>
+                        <a class="btn btn-primary" href="{{route('dashboard.admin.frontend.generatorlist.createOrUpdate')}}">{{__('Add New')}}</a>
 
                     @endif
                 </div>
@@ -48,8 +48,8 @@
 
                             @foreach($items as $entry)
                                 <tr>
-                                    <td class="sort-group">{!! $entry->menu_title !!}</td>
-                                    <td class="sort-name">{{$entry->title}}</td>
+                                    <td class="sort-group">{!! __($entry->menu_title) !!}</td>
+                                    <td class="sort-name">{{ __($entry->title) }}</td>
                                     <td class="sort-name"><img src="/{{$entry->image}}" width="200px;" alt=""></td>
                                     <td class="sort-date" data-date="{{strtotime($entry->created_at)}}">
                                         <p class="m-0">{{date("j.n.Y", strtotime($entry->created_at))}}</p>

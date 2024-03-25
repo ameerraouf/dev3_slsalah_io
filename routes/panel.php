@@ -415,7 +415,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
                 });
 
                 //Future of ai section Features
-                Route::prefix('future')->name('future.')->group(function () {
+                Route::prefix('features')->name('future.')->group(function () {
                     Route::get('/', [AdminController::class, 'frontendFuture'])->name('index');
                     Route::get('/create-or-update/{id?}', [AdminController::class, 'frontendFutureCreateOrUpdate'])->name('createOrUpdate');
                     Route::get('/action/delete/{id}', [AdminController::class, 'frontendFutureDelete'])->name('delete');

@@ -31,35 +31,35 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Menu Title')}}</label>
-                                            <input type="text" class="form-control" id="menu_title" name="menu_title" value="{{$item!=null ? $item->menu_title : null}}" required>
+                                            <input type="text" class="form-control" id="menu_title" name="menu_title" value="{{$item!=null ? __($item->menu_title) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Subtitle One')}}</label>
-                                            <input type="text" class="form-control" id="subtitle_one" name="subtitle_one" value="{{$item!=null ? $item->subtitle_one : null}}" required>
+                                            <input type="text" class="form-control" id="subtitle_one" name="subtitle_one" value="{{$item!=null ? __($item->subtitle_one) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Subtitle Two')}}</label>
-                                            <input type="text" class="form-control" id="subtitle_two" name="subtitle_two" value="{{$item!=null ? $item->subtitle_two : null}}" required>
+                                            <input type="text" class="form-control" id="subtitle_two" name="subtitle_two" value="{{$item!=null ? __($item->subtitle_two) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Title')}}</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? $item->title : null}}" required>
+                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Text')}}</label>
-                                            <textarea name="text" id="text" class="form-control" rows="10" required>{{$item!=null ? $item->text : null}}</textarea>
+                                            <textarea name="text" id="text" class="form-control" rows="10" required>{{$item!=null ? __($item->text) : null}}</textarea>
                                         </div>
                                     </div>
 
@@ -73,21 +73,21 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Image Title')}}</label>
-                                            <input type="text" class="form-control" id="image_title" name="image_title" value="{{$item!=null ? $item->image_title : null}}" required>
+                                            <input type="text" class="form-control" id="image_title" name="image_title" value="{{$item!=null ? __($item->image_title) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Image Subtitle')}}</label>
-                                            <input type="text" class="form-control" id="image_subtitle" name="image_subtitle" value="{{$item!=null ? $item->image_subtitle : null}}" required>
+                                            <input type="text" class="form-control" id="image_subtitle" name="image_subtitle" value="{{$item!=null ? __($item->image_subtitle) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Color Code (Please enter like code. For example: #FFFFFF)')}}</label>
-                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? $item->color : null}}" required>
+                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? __($item->color) : null}}" required>
                                         </div>
                                     </div>
 

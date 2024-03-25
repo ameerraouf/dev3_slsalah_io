@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', __('Who is script for section'))
+@section('title', __('Who Can Use Section'))
 
 @section('content')
     <div class="page-header">
@@ -31,14 +31,14 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Title')}}</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? $item->title : null}}" required>
+                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Color Name')}}</label>
-                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? $item->color : null}}" required>
+                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? __($item->color) : null}}" required>
                                         </div>
                                     </div>
                                 </div>

@@ -50,9 +50,9 @@
                         <tbody class="align-middle table-tbody text-heading">
                             @foreach ($list as $entry)
                                 <tr>
-                                    <td class="sort-name">{{ $entry->name }}</td>
-                                    <td class="sort-description">{{ $entry->description }}</td>
-                                    <td class="sort-description">{{ $entry->role }}</td>
+                                    <td class="sort-name">{{ __($entry->name) }}</td>
+                                    <td class="sort-description">{{ __($entry->description) }}</td>
+                                    <td class="sort-description">{{ __($entry->role) }}</td>
                                     <td class="sort-package">
                                         @if (env('APP_STATUS') == 'Demo')
                                             <select class="form-control min-w-[90px]"

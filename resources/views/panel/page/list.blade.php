@@ -27,12 +27,12 @@
                 @if(env('APP_STATUS') == 'Demo')
                     <a onclick="return toastr.info('This feature is disabled in Demo version.')" class="btn btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                        {{__('Add Page')}}
+                        {{__('Add New')}}
                     </a>
                 @else
                     <a href="{{ LaravelLocalization::localizeUrl( route('dashboard.page.addOrUpdate') ) }}" class="btn btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                        {{__('Add Page')}}
+                        {{__('Add New')}}
                     </a>
                 @endif
             </div>
