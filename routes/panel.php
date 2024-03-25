@@ -197,7 +197,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
                 Route::post('iyzico/subscribe/callback', [IyzicoController::class, 'subscribeCallback'])->name('iyzico.subscribe.callback');
 
                 Route::post('clickpay/prepaid/callback', [ClickpayController::class, 'prepaidCallback'])->name('clickpay.prepaid.callback');
-                Route::post('clickpay/subscribe/callback', [ClickpayController::class, 'subscribeCallback'])->name('clickpay.subscribe.callback');
+                Route::get('clickpay/subscribe/callback', [ClickpayController::class, 'subscribeCallback'])->name('clickpay.subscribe.callback');
 
 
                 // Route::get('/subscribe-plan/{planId}', [PaymentController::class, 'startSubscriptionProcess'])->name('startSubscriptionProcess');
@@ -443,11 +443,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::resource('advertis', AdvertisController::class)->parameter('advertis', 'advertis');
 
             //Update
-            Route::prefix('update')->name('update.')->group(function () {
-                Route::get('/', function () {
-                    return view('panel.admin.update.index');
-                })->name('index');
-            });
+            // Route::prefix('update')->name('update.')->group(function () {
+            //     Route::get('/', function () {
+            //         return view('panel.admin.update.index');
+            //     })->name('index');
+            // });
 
             //Healt Page
             Route::prefix('health')->name('health.')->group(function () {
@@ -480,11 +480,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             });
 
             //Update license type
-            Route::prefix('license')->name('license.')->group(function () {
-                Route::get('/', function () {
-                    return view('panel.admin.license.index');
-                })->name('index');
-            });
+            // Route::prefix('license')->name('license.')->group(function () {
+            //     Route::get('/', function () {
+            //         return view('panel.admin.license.index');
+            //     })->name('index');
+            // });
         });
 
         //Coupons

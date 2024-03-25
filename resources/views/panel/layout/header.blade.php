@@ -865,7 +865,7 @@
                             </a>
                         </li>
                         @if (!view()->exists('panel.admin.custom.user.header-menu'))
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link {{ activeRoute('dashboard.admin.license.index') }}"
                                     href="{{ route('dashboard.admin.license.index') }}">
                                     <span class="nav-link-icon">
@@ -885,9 +885,9 @@
                                         {{ __('License') }}
                                     </span>
                                 </a>
-                            </li>
+                            </li> --}}
                         @endif
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link nav-link--update !pe-2 {{ activeRoute('dashboard.admin.update.index') }}"
                                 href="{{ route('dashboard.admin.update.index') }}">
                                 <span class="nav-link-icon">
@@ -904,7 +904,7 @@
                                     {{ __('Update') }}
                                 </span>
                             </a>
-                        </li>
+                        </li> --}}
                     @endif
                     <li
                         class="nav-item h-[auto] transition-all group-[.navbar-shrinked]/body:opacity-0 group-[.navbar-shrinked]/body:translate-x-3 group-[.navbar-shrinked]/body:h-0 group-[.navbar-shrinked]/body:overflow-hidden">
