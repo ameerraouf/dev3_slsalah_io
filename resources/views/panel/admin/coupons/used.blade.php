@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Manage Coupons')
+@section('title', __('Manage Coupons'))
 
 @section('content')
     <div class="page-header">

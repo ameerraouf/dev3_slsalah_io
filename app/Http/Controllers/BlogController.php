@@ -159,6 +159,11 @@ class BlogController extends Controller
     public function blogAddOrUpdateSave(Request $request){
 
         $request->validate([
+            'title' => 'required',
+            'seo_title' => 'required',
+            'seo_description' => 'required',
+            'category' => 'required',
+            'tag' => 'required',
             'content' => 'required'
         ]);
 

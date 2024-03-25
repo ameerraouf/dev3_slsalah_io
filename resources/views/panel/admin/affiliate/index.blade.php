@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'My Affiliates')
+@section('title', __('Affiliate'))
 
 @section('content')
     <div class="page-header">
@@ -43,7 +43,7 @@
 						@foreach($list as $entry)
 							<tr>
 								<td class="sort-id">AFF-WTHDRWL-{{$entry->id}}</td>
-								<td class="sort-amount">{{$entry->amount}}</td>
+								<td class="sort-amount">{{__($entry->amount)}}</td>
 								<td class="sort-account">{{$entry->user->affiliate_bank_account}}</td>
 								<td class="sort-status">{{$entry->status}}</td>
 								<td class="sort-date" data-date="{{strtotime($entry->created_at)}}">

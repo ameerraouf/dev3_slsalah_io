@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Manage Coupons')
+@section('title', __('Manage Coupons'))
 
 @section('content')
     <div class="page-header">
@@ -107,7 +107,7 @@
 		<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="addingModalLabel">{{__('Add New Coupon')}}</h5>
+				<h5 class="modal-title" id="addingModalLabel">{{__('Add New')}}</h5>
 			</div>
 			<form method="POST" action="{{route('dashboard.admin.coupons.add')}}">
 				@csrf
@@ -151,11 +151,11 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Click here to exit')}}</button>
 					@if(env('APP_STATUS') == 'Demo')
 						<button type="button"  onclick="return toastr.info('This feature is disabled in Demo version.')" class="btn btn-primary">{{__('Save changes')}}</button>
 					@else
-						<button type="submit" class="btn btn-primary">{{__('Save changes')}}</button>
+						<button type="submit" class="btn btn-primary">{{__('Save')}}</button>
 					@endif
 				</div>
 			</form>
@@ -168,7 +168,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="editModalLabel">{{ __('Edit Coupon') }} - [<span id="Ecode"></span>]</h5>
+					<h5 class="modal-title" id="editModalLabel">{{ __('Edit') }} - [<span id="Ecode"></span>]</h5>
 				</div>
 				<form id="editForm" method="post">
 					<div class="modal-body">
@@ -195,8 +195,8 @@
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Close') }}</button>
-						<button type="submit" class="btn btn-primary">{{ __('Save changes') }}</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Click here to exit') }}</button>
+						<button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
 					</div>
 				</form>
 			</div>
