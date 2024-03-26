@@ -230,7 +230,7 @@ class ChatTemplatesController extends Controller
 
         $template = OpenaiGeneratorChatCategory::where('id', $id)->firstOrFail();
         $template->delete();
-        return response()->json(['message' => 'Deleted Successfully'], 200);
+        return response()->json(['message' => __('Deleted Successfully')], 200);
     }
 
 }

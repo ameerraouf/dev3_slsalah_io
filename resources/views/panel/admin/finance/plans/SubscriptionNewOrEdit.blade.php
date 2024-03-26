@@ -46,7 +46,7 @@
 									<div class="col-md-12">
 										<div class="mb-3">
 											<label class="form-label">{{__('Plan Name')}}</label>
-											<input type="text" class="form-control" id="name" name="name" value="{{isset($subscription) ? $subscription->name : null}}" required>
+											<input type="text" class="form-control" id="name" name="name" value="{{isset($subscription) ? $subscription->name : null}}"  >
 										</div>
 									</div>
 								</div>
@@ -55,13 +55,13 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Price')}}</label>
-											<input type="number" min="0" class="form-control" id="price" min="0.01"  name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
+											<input type="number" min="0" class="form-control" id="price" min="0.01"  name="price" value="{{isset($subscription) ? $subscription->price : null}}"  >
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Trial Days')}}</label>
-											<select class="form-select" id="trial_days" name="trial_days" value="{{isset($subscription) ? $subscription->trial_days : 0}}" required>
+											<select class="form-select" id="trial_days" name="trial_days" value="{{isset($subscription) ? $subscription->trial_days : 0}}"  >
 												@php($selectedValue = isset($subscription) ? (isset($subscription->trial_days) ? $subscription->trial_days : '0' ) : '0' )
 												<option value="7">7 Days</option>
 												<option value="14">14 Days</option>
@@ -79,7 +79,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('Type')}}</div>
-											<select class="form-select" id="frequency" name="frequency" required>
+											<select class="form-select" id="frequency" name="frequency"  >
                                                 @if(isset($subscription))
                                                     <option value="monthly" {{$subscription->frequency == 'monthly' ? 'selected' : ''}}>{{__('Monthly')}}</option>
                                                     <option value="yearly" {{$subscription->frequency == 'yearly' ? 'selected' : ''}}>{{__('Yearly')}}</option>
@@ -93,7 +93,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('Featured Plan')}}</div>
-											<select class="form-select" id="is_featured" name="is_featured" required>
+											<select class="form-select" id="is_featured" name="is_featured"  >
                                                 @if(isset($subscription))
                                                     <option value="1" {{$subscription->is_featured == 1 ? 'selected' : ''}}>{{__('Yes')}}</option>
                                                     <option value="0" {{$subscription->is_featured == 0 ? 'selected' : ''}}>{{__('No')}}</option>
@@ -147,7 +147,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('AI Name')}}</div>
-											<select class="form-select" id="ai_name" name="ai_name" required>
+											<select class="form-select" id="ai_name" name="ai_name"  >
 												@if(isset($subscription))
 													<option value="text-davinci-003"{{$subscription->ai_name == 'text-davinci-003' ? 'selected' : null}}>Davinci</option>
 													<option value="gpt-3.5-turbo"{{$subscription->ai_name == 'gpt-3.5-turbo' ? 'selected' : null}}>ChatGPT 3.5</option>
@@ -179,7 +179,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('Can Create AI Images')}}</div>
-											<select class="form-select" id="can_create_ai_images" name="can_create_ai_images" required>
+											<select class="form-select" id="can_create_ai_images" name="can_create_ai_images"  >
 												@if(isset($subscription))
                                                     <option value="1" {{$subscription->can_create_ai_images == 1 ? 'selected' : ''}}>{{__('Yes')}}</option>
                                                     <option value="0" {{$subscription->can_create_ai_images == 0 ? 'selected' : ''}}>{{__('No')}}</option>
@@ -194,7 +194,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('Template Access')}}</div>
-											<select class="form-select" id="plan_type" name="plan_type" required>
+											<select class="form-select" id="plan_type" name="plan_type"  >
 												@if(isset($subscription))
                                                     <option value="All" {{$subscription->plan_type == 'All' ? 'selected' : ''}}>{{__('All')}}</option>
                                                     <option value="Premium" {{$subscription->plan_type == 'Premium' ? 'selected' : ''}}>{{__('Premium')}}</option>
@@ -211,7 +211,7 @@
 									<div class="col-md-12">
 										<div class="mb-3">
 											<div class="form-label">{{__('Features (Comma Seperated)')}}</div>
-											<textarea class="form-control" name="features" id="features" cols="30" rows="10" required>{{isset($subscription) ? $subscription->features : null}}</textarea>
+											<textarea class="form-control" name="features" id="features" cols="30" rows="10"  >{{isset($subscription) ? $subscription->features : null}}</textarea>
 										</div>
 									</div>
 								</div>

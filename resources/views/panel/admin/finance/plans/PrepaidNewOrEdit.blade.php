@@ -46,7 +46,7 @@
 									<div class="col-md-12">
 										<div class="mb-3">
 											<label class="form-label">{{__('Plan Name')}}</label>
-											<input type="text" class="form-control" id="name" name="name" value="{{isset($subscription) ? $subscription->name : null}}" required>
+											<input type="text" class="form-control" id="name" name="name" value="{{isset($subscription) ? $subscription->name : null}}"  >
 										</div>
 									</div>
 								</div>
@@ -55,7 +55,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<label class="form-label">{{__('Price')}}</label>
-											<input type="number" min="0" class="form-control" min="0.01" id="price"  name="price" value="{{isset($subscription) ? $subscription->price : null}}" required>
+											<input type="number" min="0" class="form-control" min="0.01" id="price"  name="price" value="{{isset($subscription) ? $subscription->price : null}}"  >
 										</div>
 									</div>
 								</div>
@@ -64,7 +64,7 @@
 									<div class="col-md-6">
 										<div class="mb-3">
 											<div class="form-label">{{__('Featured Plan')}}</div>
-											<select class="form-select" id="is_featured" name="is_featured" required>
+											<select class="form-select" id="is_featured" name="is_featured"  >
 												@if(isset($subscription))
 												<option value="1" {{$subscription->is_featured == 1 ? 'selected' : ''}}>{{__('Yes')}}</option>
 												<option value="0" {{$subscription->is_featured == 0 ? 'selected' : ''}}>{{__('No')}}</option>
@@ -118,7 +118,7 @@
 									<div class="col-md-12">
 										<div class="mb-3">
 											<div class="form-label">{{__('Features (Comma Seperated)')}}</div>
-											<textarea class="form-control" name="features" id="features" cols="30" rows="10" required>{{isset($subscription) ? $subscription->features : null}}</textarea>
+											<textarea class="form-control" name="features" id="features" cols="30" rows="10"  >{{isset($subscription) ? $subscription->features : null}}</textarea>
 										</div>
 									</div>
 								</div>

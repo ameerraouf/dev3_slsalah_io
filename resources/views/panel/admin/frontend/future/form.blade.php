@@ -31,19 +31,19 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Title')}}</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}" required>
+                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Text')}}</label>
-                                            <textarea name="description" id="description" class="form-control" rows="10" required>{{$item!=null ? __($item->description) : null}}</textarea>
+                                            <textarea name="description" id="description" class="form-control" rows="10" >{{$item!=null ? __($item->description) : null}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Icon')}}(<a target="_blank" href="https://tabler-icons.io/">TablerIcons as SVG</a>)</label>
-                                            <input type="text" class="form-control" id="image" name="image" value="{{$item!=null ? $item->image : null}}" required>
+                                            <input type="text" class="form-control" id="image" name="image" value="{{$item!=null ? $item->image : null}}" >
                                         </div>
                                     </div>
                                 </div>

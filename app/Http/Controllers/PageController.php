@@ -44,7 +44,7 @@ class PageController extends Controller
     public function pageDelete($id = null){
         $page = Page::where('id', $id)->firstOrFail();
         $page->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function pageAddOrUpdateSave(Request $request){

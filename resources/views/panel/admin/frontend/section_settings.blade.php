@@ -140,14 +140,14 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Tools Title')}}</label>
-                                <input type="text" class="form-control" id="tools_title" name="tools_title" value="{{$fSectSettings->tools_title}}">
+                                <input type="text" class="form-control" id="tools_title" name="tools_title" value="{{__($fSectSettings->tools_title)}}">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">{{__('Tools Description')}}</label>
-                                <textarea class="form-control" id="tools_description" name="tools_description">{{$fSectSettings->tools_description}}</textarea>
+                                <textarea class="form-control" id="tools_description" name="tools_description">{{__($fSectSettings->tools_description)}}</textarea>
                             </div>
                         </div>
 
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="row">
-                        <h3 class="mb-[25px] text-[20px]">{{__('How It Works Section')}}</h3>
+                        <h3 class="mb-[25px] text-[20px]">{{__('How it Works Section')}}</h3>
 
                         <div class="col-md-12">
                             <div class="mb-3">

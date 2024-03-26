@@ -169,7 +169,7 @@ class AdminController extends Controller
     public function usersDelete($id){
         $user = User::whereId($id)->firstOrFail();
         $user->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function usersSave(Request $request){
@@ -245,7 +245,7 @@ class AdminController extends Controller
     public function chatCategoriesDelete($id = null) {
         $item = ChatCategory::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);        
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);        
     }
 
     //OPENAI CHAT CUSTOM TEMPLATES
@@ -301,7 +301,7 @@ class AdminController extends Controller
     public function openAIChatDelete($id = null){
         $template = OpenaiGeneratorChatCategory::where('id', $id)->firstOrFail();
         $template->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function openAIChatAddOrUpdateSave(Request $request){
@@ -370,7 +370,7 @@ class AdminController extends Controller
     public function openAICustomDelete($id = null){
         $template = OpenAIGenerator::where('id', $id)->firstOrFail();
         $template->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function openAICustomAddOrUpdateSave(Request $request){
@@ -445,7 +445,7 @@ class AdminController extends Controller
     public function openAICategoriesDelete($id = null){
         $item = OpenaiGeneratorFilter::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function openAICategoriesAddOrUpdateSave(Request $request){
@@ -532,6 +532,14 @@ class AdminController extends Controller
 
 
     public function paymentPlansSave(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'total_words' => 'required',
+            'total_images' => 'required',
+            'features' => 'required',
+        ]);
         if ($request->plan_id != 'undefined'){
             $plan = PaymentPlans::where('id', $request->plan_id)->firstOrFail();
         }else{
@@ -682,6 +690,11 @@ class AdminController extends Controller
 
 
     public function howitWorksSave(Request $request){
+
+        $this->validate($request, [
+            'order' => 'required',
+            'title' => 'required',
+        ]);
         if ($request->howitWorks_id != 'undefined'){
             $howitWorks = HowitWorks::where('id', $request->howitWorks_id)->firstOrFail();
         }else{
@@ -1224,6 +1237,11 @@ class AdminController extends Controller
     }
 
     public function frontendFuturecreateOrUpdateSave(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         if ($request->item_id != 'undefined'){
             $item = FrontendFuture::where('id', $request->item_id)->firstOrFail();
         }else{
@@ -1238,7 +1256,7 @@ class AdminController extends Controller
     public function frontendFutureDelete($id){
         $item = FrontendFuture::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Item deleted succesfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted succesfully'), 'type' => 'success']);
     }
 
 
@@ -1263,6 +1281,11 @@ class AdminController extends Controller
     }
 
     public function frontendWhoiscreateOrUpdateSave(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'color' => 'required',
+        ]);
+
         if ($request->item_id != 'undefined'){
             $item = FrontendForWho::where('id', $request->item_id)->firstOrFail();
         }else{
@@ -1299,6 +1322,17 @@ class AdminController extends Controller
     }
 
     public function frontendGeneratorlistcreateOrUpdateSave(Request $request){
+        $this->validate($request,[
+            'menu_title' => 'required',
+            'subtitle_one' => 'required',
+            'subtitle_two' => 'required',
+            'title' => 'required',
+            'text' => 'required',
+            'image_title' => 'required',
+            'image_subtitle' => 'required',
+            'color' => 'required',
+        ]);
+
         if ($request->item_id != 'undefined'){
             $item = FrontendGenerators::where('id', $request->item_id)->firstOrFail();
         }else{

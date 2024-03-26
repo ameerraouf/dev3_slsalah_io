@@ -74,7 +74,7 @@
                                 </td>
                                 <td class="sort-status">
                                     @if($entry->status == 1)
-										<div class="badge bg-success">{{__('Published')}}</div>
+										<div class="badge bg-success">{{__("Published")}}</div>
 									@else
 										<div class="badge bg-info">{{__('Draft')}}</div>
 									@endif

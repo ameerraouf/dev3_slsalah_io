@@ -36,12 +36,12 @@
 
                                 <div class="vstack gap-1">
                                     <label class="form-label">{{__('Order')}}</label>
-									<input type="number" min="0" class="form-control" id="order" name="order" value="{{isset($howitWorks) ? $howitWorks->order : null}}" required>
+									<input type="number" min="0" class="form-control" id="order" name="order" value="{{isset($howitWorks) ? $howitWorks->order : null}}"  >
                                 </div>
 
                                 <div class="vstack gap-1">
                                     <label class="form-label">{{__('Title')}}</label>
-									<textarea class="form-control" name="title" id="title" cols="30" rows="10" required>{{isset($howitWorks) ? $howitWorks->title : null}}</textarea>
+									<textarea class="form-control" name="title" id="title" cols="30" rows="10"  >{{isset($howitWorks) ? $howitWorks->title : null}}</textarea>
                                 </div>
 
 								<button form="item_edit_form" id="item_edit_button" class="btn btn-primary w-100">

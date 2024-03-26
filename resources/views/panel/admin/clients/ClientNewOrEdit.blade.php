@@ -45,12 +45,12 @@
 
                                 <div class="vstack gap-1">
                                     <label class="form-label">{{__('Alt')}}</label>
-									<input type="text" class="form-control" id="client_alt" name="client_alt" value="{{isset($client) ? $client->alt : null}}" required>
+									<input type="text" class="form-control" id="client_alt" name="client_alt" value="{{isset($client) ? $client->alt : null}}" >
                                 </div>
 
                                 <div class="vstack gap-1">
                                     <label class="form-label">{{__('Title')}}</label>
-									<input type="text" class="form-control" id="client_title" name="client_title" value="{{isset($client) ? $client->title : null}}" required>
+									<input type="text" class="form-control" id="client_title" name="client_title" value="{{isset($client) ? $client->title : null}}" >
                                 </div>
 
 								<button form="item_edit_form" id="item_edit_button" class="btn btn-primary w-100">

@@ -153,7 +153,7 @@ class BlogController extends Controller
     public function blogDelete($id = null){
         $post = Blog::where('id', $id)->firstOrFail();
         $post->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function blogAddOrUpdateSave(Request $request){

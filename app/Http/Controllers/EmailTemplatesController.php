@@ -25,7 +25,7 @@ class EmailTemplatesController extends Controller
     public function templateDelete($id = null){
         $template = EmailTemplates::where('id', $id)->firstOrFail();
         $template->delete();
-        return back()->with(['message' => 'Deleted Successfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted Successfully'), 'type' => 'success']);
     }
 
     public function templateAddOrUpdateSave(Request $request){

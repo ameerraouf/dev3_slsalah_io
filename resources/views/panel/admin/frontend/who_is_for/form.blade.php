@@ -31,14 +31,14 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Title')}}</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}" required>
+                                            <input type="text" class="form-control" id="title" name="title" value="{{$item!=null ? __($item->title) : null}}"  >
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label class="form-label">{{__('Color Name')}}</label>
-                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? __($item->color) : null}}" required>
+                                            <label class="form-label">{{__('Color')}}</label>
+                                            <input type="text" class="form-control" id="color" name="color" value="{{$item!=null ? __($item->color) : null}}"  >
                                         </div>
                                     </div>
                                 </div>

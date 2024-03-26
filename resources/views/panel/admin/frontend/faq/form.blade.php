@@ -31,13 +31,13 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Question')}}</label>
-                                            <input type="text" class="form-control" id="question" name="question" value="{{$faq!=null ? $faq->question : null}}" required>
+                                            <input type="text" class="form-control" id="question" name="question" value="{{$faq!=null ? __($faq->question) : null}}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">{{__('Answer')}}</label>
-                                            <textarea name="answer" id="answer" class="form-control" rows="10" required>{{$faq!=null ? $faq->answer : null}}</textarea>
+                                            <textarea name="answer" id="answer" class="form-control" rows="10" >{{$faq!=null ? __($faq->answer) : null}}</textarea>
                                         </div>
                                     </div>
                                 </div>
