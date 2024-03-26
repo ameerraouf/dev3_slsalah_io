@@ -93,13 +93,13 @@
 								@endphp
                                 @if($question->type == 'text')
                                     <label class="form-label">{{__($question->question)}}</label>
-                                    <input type="{{$question->type}}" class="form-control" id="{{$question->name}}" name="{{$question->name}}" maxlength="{{$setting->openai_max_input_length}}" placeholder="{{__($placeholder)}}" required="required">
+                                    <input type="{{$question->type}}" class="form-control" id="{{$question->name}}" name="{{$question->name}}" maxlength="{{$setting->openai_max_input_length}}" placeholder="{{__($placeholder)}}"   >
                                 @elseif($question->type == 'textarea')
                                     <label class="form-label">{{__($question->question)}}</label>
-                                    <textarea class="form-control" id="{{$question->name}}" name="{{$question->name}}" rows="12" placeholder="{{__($placeholder)}}" maxlength="{{$setting->openai_max_input_length}}" required="required"></textarea>
+                                    <textarea class="form-control" id="{{$question->name}}" name="{{$question->name}}" rows="12" placeholder="{{__($placeholder)}}" maxlength="{{$setting->openai_max_input_length}}"   ></textarea>
                                 @elseif($question->type == 'select')
                                     <div class="form-label">{{__($question->question)}}</div>
-                                    <select class="form-select" id="{{$question->name}}" name="{{$question->name}}" required="required">
+                                    <select class="form-select" id="{{$question->name}}" name="{{$question->name}}"   >
                                         {!! $question->select !!}
                                     </select>
                                 @endif
@@ -111,24 +111,24 @@
 
 							<div class="mb-3 col-xs-12">
                                 <label class="form-label">{{__('Language')}}</label>
-                                <select type="text" class="form-select" name="language" id="language" required>
+                                <select type="text" class="form-select" name="language" id="language"   >
                                     @include('panel.user.openai.components.countries')
                                 </select>
                             </div>
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <label class="form-label">{{__('Maximum Length')}}</label>
-                                <input type="number" min="0" class="form-control" id="maximum_length" name="maximum_length" max="{{$setting->openai_max_output_length}}" value="400" placeholder="{{__('Maximum character length of text')}}" required>
+                                <input type="number" min="0" class="form-control" id="maximum_length" name="maximum_length" max="{{$setting->openai_max_output_length}}" value="400" placeholder="{{__('Maximum character length of text')}}"   >
                             </div>
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <label class="form-label">{{__('Number of Results')}}</label>
-                                <input type="number" min="0" class="form-control" id="number_of_results" name="number_of_results" value="1" placeholder="{{__('Number of results')}}" required>
+                                <input type="number" min="0" class="form-control" id="number_of_results" name="number_of_results" value="1" placeholder="{{__('Number of results')}}"   >
                             </div>
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <label class="form-label">{{__('Creativity')}}</label>
-                                <select type="text" class="form-select" name="creativity" id="creativity" required>
+                                <select type="text" class="form-select" name="creativity" id="creativity"   >
                                     <option value="0.25" {{$setting->openai_default_creativity == 0.25 ? 'selected' : ''}}>{{__('Economic')}}</option>
                                     <option value="0.5" {{$setting->openai_default_creativity == 0.5 ? 'selected' : ''}}>{{__('Average')}}</option>
                                     <option value="0.75" {{$setting->openai_default_creativity == 0.75 ? 'selected' : ''}}>{{__('Good')}}</option>
@@ -138,7 +138,7 @@
 
                             <div class="mb-3 col-xs-12 col-md-6">
                                 <div class="form-label">{{__('Tone of Voice')}}</div>
-                                <select class="form-select" id="tone_of_voice" name="tone_of_voice" required>
+                                <select class="form-select" id="tone_of_voice" name="tone_of_voice"   >
                                 <option value="Professional" {{$setting->openai_default_tone_of_voice == 'Professional' ? 'selected' : null}}>{{__('Professional')}}</option>
                                     <option value="Funny" {{$setting->opena_default_tone_of_voice == 'Funny' ? 'selected' : null}}>{{__('Funny')}}</option>
                                     <option value="Casual" {{$setting->openai_default_tone_of_voice == 'Casual' ? 'selected' : null}}>{{__('Casual')}}</option>
@@ -335,7 +335,7 @@
                     @if($openai->type == 'code')
                         // because data changing in the dom can't cache codeOutput
                         // const codeOutput = $("#code-output");
-                        toastr.success("{{ __('Generated Successfully!') }}");
+                        toastr.success(magicai_localize.generated);
                         // if ( $("#code-output").length ) {
                         $("#workbook_textarea").html(data.html);
                         window.codeRaw = $("#code-output").text();

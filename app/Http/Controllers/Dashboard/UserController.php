@@ -417,7 +417,7 @@ class UserController extends Controller
             }
         }
         $folder->delete();
-        return response()->json(['message' => __('Folder deleted successfully')]);
+        return response()->json(['message' => __('Deleted successfully')]);
     }
 
     public function newFolder(Request $request) {
@@ -465,7 +465,7 @@ class UserController extends Controller
             }  
         } catch (\Throwable $th) {}
         $workbook->delete();
-        return redirect()->route('dashboard.user.openai.documents.all')->with(['message' => 'Document deleted successfuly', 'type' => 'success']);
+        return redirect()->route('dashboard.user.openai.documents.all')->with(['message' => __('Deleted successfuly'), 'type' => 'success']);
     }
 
     public function documentsImageDelete($slug)
@@ -491,7 +491,7 @@ class UserController extends Controller
             
         }
         $workbook->delete();
-        return back()->with(['message' => 'Deleted successfuly', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted successfuly'), 'type' => 'success']);
     }
 
     //Affiliates
@@ -513,6 +513,10 @@ class UserController extends Controller
 
     public function affiliatesListSendInvitation(Request $request)
     {
+        $this->validate($request, [
+            'to_mail' => 'required',
+        ]);
+        
         $user = Auth::user();
 
         $sendTo = $request->to_mail;

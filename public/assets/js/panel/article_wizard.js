@@ -7,6 +7,11 @@ $( document ).ready( function () {
 	"use strict";
 
 	function newArticle() {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: '/dashboard/user/openai/articlewizard/clear',
@@ -223,7 +228,7 @@ function generateData() {
 	let wizardData = { ...CUR_STATE }
 	if ( wizardData.current_step == 0 ) {
 		if ( $( "#txtforkeyword" ).val() == "" ) {
-			toastr.warning( 'Please input topic' )
+			toastr.warning( magicai_localize.please_input_topic )
 			return;
 		}
 		isGenerating = true;
@@ -331,11 +336,16 @@ function generateKeywords() {
 		isGenerating = false;
 		document.querySelector( '#app-loading-indicator' )?.classList?.add( 'opacity-0' );
 		updateData();
-		console.log( data );
-		toastr.error( data.responseJSON.message );
+		console.log( data.message );
+		toastr.error( "ERROR" );
 	}
 
 	if ( stream_type == 'backend' ) {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: '/dashboard/user/openai/articlewizard/genkeywords',
@@ -349,6 +359,11 @@ function generateKeywords() {
 			error: error_function
 		} );
 	} else {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: atob( guest_id ),
@@ -428,6 +443,11 @@ function generateTitles() {
 	}
 
 	if ( stream_type == 'backend' ) {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: '/dashboard/user/openai/articlewizard/gentitles',
@@ -443,6 +463,11 @@ function generateTitles() {
 		} );
 	} else {
 		let content = title_topic.trim() == '' ? `Generate ${ titles_count } titles(Maximum title length is ${ title_length }. in ${ language } language. Must not be 'title1', 'title2', 'title3', 'title4', 'title5') about Keywords: '" . ${ wizardData.keywords } . "'. This is result JSON format: [title1, title2, ..., titlen] without any additional formatting or characters. Maximum title length is ${ title_length }` : `Generate ${ titles_count } titles(Maximum title length is ${ title_length }., Must not be 'title1', 'title2', 'title3', 'title4', 'title5') about Topic: '" . ${ title_topic } . "'.This is result JSON format: [title1, title2, ..., titlen] without any additional formatting or characters. Maximum title length is ${ title_length }`;
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: atob( guest_id ),
@@ -521,6 +546,11 @@ function generateOutlines() {
 	}
 
 	if ( stream_type == 'backend' ) {
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		$.ajax( {
 			type: "post",
 			url: '/dashboard/user/openai/articlewizard/genoutlines',
@@ -539,7 +569,12 @@ function generateOutlines() {
 	} else {
 		let content = topic_outline.trim() == '' ? `The keywords of article are ${ wizardData.keywords }. in ${ language } language. Generate different outlines( Each outline must has only ${ subtitle_count } subtitles(Without number for order, subtitles are not keywords)) ${ outlines_count } times. The depth is 1.  Must not write any description. Every subtitle is sentence or phrase string. This is result JSON format: [[subtitle1(string), subtitle2(string), subtitle3(string), ... , subtitle-${ outlines_count }(string)], [subtitle1(string), subtitle2(string), subtitle3(string), ... , subtitle-${ outlines_count }(string)], ... ,[subtitle1(string), subtitle2(string), subtitle3(string), ..., subtitle-${ outlines_count } (string)] without any additional formatting or characters.` :
 			`The subject of article is ${ topic_outline }. in ${ language } language. Generate different outlines( Each outline must has only ${ subtitle_count } subtitles(Without number for order, subtitles are not keywords)) ${ outlines_count } times. The depth is 1" . " Must not write any description. Every subtitle is sentence or phrase string. This is result JSON format: [[subtitle1(string), subtitle2(string), subtitle3(string), ... , subtitle-${ subtitle_count }(string)], [subtitle1(string), subtitle2(string), subtitle3(string), ... , subtitle-${ subtitle_count }(string)], ... ,[subtitle1(string), subtitle2(string), subtitle3(string), ..., subtitle-${ subtitle_count } (string)]] without any additional formatting or characters.`;
-		$.ajax( {
+			$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+			$.ajax( {
 			type: "post",
 			url: atob( guest_id ),
 			headers: {
@@ -566,7 +601,11 @@ function generateImages() {
 	const topic_image = $( "#txtforimage" ).val();
 	const image_cnt = Number( $( "#number_of_images" ).val() );
 	const size = $( "#size_of_images" ).val();
-
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax( {
 		type: "post",
 		url: '/dashboard/user/openai/articlewizard/genimages',
@@ -834,6 +873,11 @@ function addImage() {
 	var form_data = new FormData();
 	form_data.append( 'image', file_data );
 	form_data.append( 'title', $( "#new_image_title" ).val() );
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax( {
 		url: '/image/upload', // point to server-side controller method
 		dataType: 'text', // what to expect back from the server
@@ -924,6 +968,11 @@ function uploadDatabase( type, tokens = 0 ) {
 		new_data[ 'id' ] = wizardData.id;
 		new_data[ 'tokens' ] = tokens;
 	}
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax( {
 		type: "post",
 		url: '/dashboard/user/openai/articlewizard/update',
@@ -1236,6 +1285,11 @@ function updateData() {
 }
 
 function updateRemainingBar() {
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
 	$.ajax( {
 		type: "post",
 		url: '/dashboard/user/openai/articlewizard/remains',

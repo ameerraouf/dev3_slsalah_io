@@ -40,7 +40,7 @@ function clientSave( client_id ) {
                 console.error(value);
 			} );
 			document.getElementById( "item_edit_button" ).disabled = false;
-			document.getElementById( "item_edit_button" ).innerHTML = "Save";
+			document.getElementById( "item_edit_button" ).innerHTML = magicai_localize.save;
 		}
 	} );
 	return false;

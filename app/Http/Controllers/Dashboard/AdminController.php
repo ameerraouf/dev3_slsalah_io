@@ -1151,7 +1151,7 @@ class AdminController extends Controller
         $faq = Faq::where('id', $id)->firstOrFail();
         $faq->delete();
 
-        return back()->with(['message' => 'Faq deleted succesfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted succesfully'), 'type' => 'success']);
     }
 
 
@@ -1211,7 +1211,7 @@ class AdminController extends Controller
     public function frontendToolsDelete($id){
         $item = FrontendTools::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Item deleted succesfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted succesfully'), 'type' => 'success']);
     }
 
 
@@ -1299,7 +1299,7 @@ class AdminController extends Controller
     public function frontendWhoisDelete($id){
         $item = FrontendForWho::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Item deleted succesfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted succesfully'), 'type' => 'success']);
     }
 
 
@@ -1375,7 +1375,7 @@ class AdminController extends Controller
     public function frontendGeneratorlistDelete($id){
         $item = FrontendGenerators::where('id', $id)->firstOrFail();
         $item->delete();
-        return back()->with(['message' => 'Item deleted succesfully', 'type' => 'success']);
+        return back()->with(['message' => __('Deleted succesfully'), 'type' => 'success']);
     }
 }
 

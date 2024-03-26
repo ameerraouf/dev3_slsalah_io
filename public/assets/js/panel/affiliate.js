@@ -28,15 +28,15 @@ function sendRequestForm() {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success('Request Sent Succesfully');
+			toastr.success(magicai_localize.requestsent);
 			setTimeout( function () {
 				location.reload();
 			}, 900 );
 		},
 		error: function ( data ) {
-			toastr.error('You cannot withdrawal with this amount. Please check')
+			toastr.error(magicai_localize.cannotwithdraw)
 			document.getElementById( "send_request_button" ).disabled = false;
-			document.getElementById( "send_request_button" ).innerHTML = "Send Request";
+			document.getElementById( "send_request_button" ).innerHTML = magicai_localize.send;
 		}
 	} );
 	return false;
@@ -59,14 +59,14 @@ function sendInvitationForm() {
         contentType: false,
         processData: false,
         success: function ( data ) {
-            toastr.success('Invitation Sent Succesfully!');
+            toastr.success(magicai_localize.invitesent);
             document.getElementById( "send_invitation_button" ).disabled = false;
-            document.getElementById( "send_invitation_button" ).innerHTML = "Send Invitation";
+            document.getElementById( "send_invitation_button" ).innerHTML = magicai_localize.send;
         },
         error: function ( data ) {
-            toastr.error('Error while sending information. Please contact us.')
+            toastr.error(magicai_localize.errorsend)
             document.getElementById( "send_invitation_button" ).disabled = false;
-            document.getElementById( "send_invitation_button" ).innerHTML = "Send Invitation";
+            document.getElementById( "send_invitation_button" ).innerHTML = magicai_localize.send;
         }
     } );
     return false;

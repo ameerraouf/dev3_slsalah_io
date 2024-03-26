@@ -34,7 +34,7 @@ class AdsController extends Controller
             })
             ->addColumn('custom-status', function($row){
                 $status = ($row['status']) ? 'Activated' : 'Deactivated';
-                $custom_status = '<span class="cell-box  adsense-'.strtolower($status).'">'. $status .'</span>';
+                $custom_status = '<span class="cell-box  adsense-'.strtolower($status).'">'. __($status) .'</span>';
                 return $custom_status;
             })
             ->rawColumns(['actions', 'custom-status', 'updated-on', 'custom-type'])

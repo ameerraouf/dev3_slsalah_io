@@ -87,9 +87,9 @@
                     contentType: false,
                     processData: false,
                     success: function(data) {
-                        toastr.success("{{ __('Generated') }}");
+                        toastr.success(magicai_localize.generated);
                         document.getElementById("generate_speech_button").disabled = false;
-                        document.getElementById("generate_speech_button").innerHTML = "{{ __('Generate') }}";
+                        document.getElementById("generate_speech_button").innerHTML = magicai_localize.generate;
                         $("#generator_sidebar_table").html(data.html2);
 
                         var audioElements = document.querySelectorAll('.data-audio');
@@ -101,7 +101,7 @@
                             toastr.error(value);
                         });
                         document.getElementById("generate_speech_button").disabled = false;
-                        document.getElementById("generate_speech_button").innerHTML = "{{ __('Generate') }}";
+                        document.getElementById("generate_speech_button").innerHTML = magicai_localize.generate;
                         // document.getElementById("generate_speech_button").innerHTML = "{{ __('Save') }}";
                     }
                 });
@@ -2040,11 +2040,11 @@
                             contentType: false,
                             processData: false,
                             success: function(data) {
-                                toastr.success("{{ __('Generated') }}");
+                                toastr.success(magicai_localize.generated);
                                 document.getElementById("generate_speech_button")
                                     .disabled = false;
                                 document.getElementById("generate_speech_button")
-                                    .innerHTML = "{{ __('Generate') }}";
+                                    .innerHTML = magicai_localize.generate;
                                 speechElement.find('.data-preview').html(data
                                     .output);
                                 generateWaveForm(speechElement[0].querySelector(
@@ -2209,9 +2209,9 @@
 
                     //show successful message
                     @if ($openai->type == 'image')
-                        toastr.success(`Image Generated Successfully in ${res.image_storage}`);
+                        toastr.success(`${magicai_localize.generated} in ${res.image_storage}`);
                     @else
-                        toastr.success("{{ __('Generated Successfully!') }}");
+                        toastr.success(magicai_localize.generated);
                     @endif
 
                     setTimeout(function() {
@@ -2274,7 +2274,7 @@
                 error: function(data) {
                     console.log(data);
                     document.getElementById("openai_generator_button").disabled = false;
-                    document.getElementById("openai_generator_button").innerHTML = "Genarate";
+                    document.getElementById("openai_generator_button").innerHTML = magicai_localize.generate;
                     document.querySelector('#app-loading-indicator')?.classList?.add('opacity-0');
                     document.querySelector('#workbook_regenerate')?.classList?.add('hidden');
                     if (data.responseJSON.errors) {

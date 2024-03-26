@@ -30,7 +30,7 @@
 				<div class="col-md-12 mx-auto">
 					<div class="card overflow-hidden border-0">
                         <div class="card-header">
-                            <h3 class="card-title">{{ __('Edit Google Adsense Code') }}: <span class="font-weight-bold text-primary">{{ $id->type }}</span></h3>
+                            <h3 class="card-title">{{ __('Edit Google Adsense Code') }}: <span class="font-weight-bold text-primary">{{ __($id->type) }}</span></h3>
                         </div>
                         <div class="card-body pt-5">									
                             <form id="" action="{{ route('dashboard.admin.ads.update', [$id->id]) }}" method="POST" enctype="multipart/form-data">

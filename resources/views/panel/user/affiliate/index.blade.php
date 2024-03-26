@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Affiliate')
+@section('title', __('Affiliate'))
 
 @section('content')
     <div class="page-header">
@@ -82,7 +82,7 @@
 							<p class="mb-2 mt-auto text-heading text-[13px]">{{__('Affiliate Link')}}</p>
                             <form id="send_invitation_form" onsubmit="return sendInvitationForm();">
                                 <div class="flex items-center relative">
-                                    <input class="form-control h-10" type="email" name="to_mail" id="to_mail" placeholder="{{__('Email address')}}" required>
+                                    <input class="form-control h-10" type="email" name="to_mail" id="to_mail" placeholder="{{__('Email')}}">
                                     <span class="flex items-center h-full absolute top-0 !end-0 px-3">
 									<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_253_1239)"> <path d="M17.4167 4.58331H4.58333C3.57081 4.58331 2.75 5.40412 2.75 6.41665V15.5833C2.75 16.5958 3.57081 17.4166 4.58333 17.4166H17.4167C18.4292 17.4166 19.25 16.5958 19.25 15.5833V6.41665C19.25 5.40412 18.4292 4.58331 17.4167 4.58331Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/> <path d="M2.75 6.41669L11 11.9167L19.25 6.41669" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <clipPath id="clip0_253_1239"> <rect width="22" height="22" fill="white"/> </clipPath> </defs> </svg>
 								</span>
@@ -108,7 +108,7 @@
 									<input type="number" min="0" class="form-control h-10" name="amount" id="amount" min="{{$setting->affiliate_minimum_withdrawal}}" placeholder="{{__('Minimum Withdrawal Amount is')}} {{$setting->affiliate_minimum_withdrawal}}">
 								</div>
 
-								<button type="submit" id="send_request_button" form="send_request_form" class="btn btn-primary w-100 rounded-[10px]">{{__('Send Request')}}</button>
+								<button type="submit" id="send_request_button" form="send_request_form" class="btn btn-primary w-100 rounded-[10px]">{{__('Send')}}</button>
 							</form>
 						</div>
 					</div>

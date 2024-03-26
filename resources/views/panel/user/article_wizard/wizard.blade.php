@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'AI Article Wizard')
+@section('title', __('AI Article Wizard'))
 
 @section('content')
     <div class="page-header">

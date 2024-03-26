@@ -174,7 +174,7 @@ function templateSave( template_id ) {
 			toastr.success('Template Saved Succesfully')
 			location.href = '/dashboard/admin/openai/custom';
 			document.getElementById( "custom_template_button" ).disabled = false;
-			document.getElementById( "custom_template_button" ).innerHTML = "Save";
+			document.getElementById( "custom_template_button" ).innerHTML = magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -182,7 +182,7 @@ function templateSave( template_id ) {
 				toastr.error( value );
 			} );
 			document.getElementById( "custom_template_button" ).disabled = false;
-			document.getElementById( "custom_template_button" ).innerHTML = "Save";
+			document.getElementById( "custom_template_button" ).innerHTML = magicai_localize.save;
 		}
 	} );
 	return false;
@@ -228,7 +228,7 @@ function templateChatSave( template_id ) {
 			toastr.success('Chat Template Saved Succesfully')
 			location.href = '/dashboard/admin/openai/chat';
 			document.getElementById( "custom_template_button" ).disabled = false;
-			document.getElementById( "custom_template_button" ).innerHTML = "Save";
+			document.getElementById( "custom_template_button" ).innerHTML = magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -236,7 +236,7 @@ function templateChatSave( template_id ) {
 				toastr.error( value );
 			} );
 			document.getElementById( "custom_template_button" ).disabled = false;
-			document.getElementById( "custom_template_button" ).innerHTML = "Save";
+			document.getElementById( "custom_template_button" ).innerHTML = magicai_localize.save;
 		}
 	} );
 	return false;

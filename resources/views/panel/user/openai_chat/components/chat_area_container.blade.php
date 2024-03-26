@@ -240,7 +240,7 @@
                     </button>
                     <textarea
                         class="w-full border-none outline-none focus:border-none focus:ring-0 my-0 ml-0 pe-[100px] bg-transparent text-heading"
-                        placeholder="Type a message or upload an image" name="prompt" id="prompt" rows="1"></textarea>
+                        placeholder="{{__('Type a message or upload an image')}}" name="prompt" id="prompt" rows="1"></textarea>
                     <div class="flex items-center absolute top-0 end-2 h-full">
                         <button type="button" id="prompt_library"
                             class="flex items-center justify-center w-10 h-10 p-0 shrink-0 rounded-full cursor-pointer border-none bg-transparent transition-all hover:!bg-[--lqd-pink] hover:text-black text-heading">

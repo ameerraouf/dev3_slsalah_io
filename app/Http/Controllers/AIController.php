@@ -49,6 +49,20 @@ class AIController extends Controller
 
     public function buildOutput(Request $request)
     {
+        $this->validate($request, [
+            'number_of_results' => 'required',
+            'maximum_length' => 'required',
+            'language' => 'required',
+            'your_description' => 'required',
+            'article_title' => 'required',
+            'text_to_summary' => 'required',
+            'product_name' => 'required',
+            'seed_words' => 'required',
+            'subject' => 'required',
+            'description' => 'required',
+            'title' => 'required',
+            'keywords' => 'required',
+        ]);
         $user = Auth::user();
 
         if ($request->post_type != 'ai_image_generator' && $user->remaining_words <= 0 && $user->remaining_words != -1) {

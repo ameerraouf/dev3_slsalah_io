@@ -16,6 +16,15 @@
 <script>
     var magicai_localize = {
         signup: @json(__('global.Sign Up')),
+        save: @json(__('global.Save')),
+        saved: @json(__('global.Saved')),
+        send: @json(__('global.Send')),
+        requestsent: @json(__('global.Request Sent Succesfully')),
+        please_input_topic: @json(__('global.Please input topic')),
+        invitesent: @json(__('global.Invitation Sent Succesfully')),
+        errorsend: @json(__('global.Error while sending information. Please contact us.')),
+        generate: @json(__('global.Generate')),
+        generated: @json(__('global.Generated')),
         please_wait: @json(__('global.Please Wait...')),
         sign_in: @json(__('Sign in')),
         login_redirect: @json(__('global.Login Successful, Redirecting...')),
@@ -26,6 +35,7 @@
         missing_email: @json(__('global.Please enter your email address.')),
         missing_password: @json(__('global.Please enter your password.')),
         content_copied_to_clipboard: @json(__('Content copied to clipboard.')),
+        cannotwithdraw: @json(__('global.You cannot withdrawal with this amount. Please check')),
     }
 </script>
 

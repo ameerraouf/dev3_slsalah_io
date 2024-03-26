@@ -72,7 +72,7 @@ function frontendSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -80,7 +80,7 @@ function frontendSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -154,7 +154,7 @@ function frontendSectionSettingsSave() {
         success: function ( data ) {
             toastr.success('Settings saved succesfully')
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";;
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;;
         },
         error: function ( data ) {
             var err = data.responseJSON.errors;
@@ -162,7 +162,7 @@ function frontendSectionSettingsSave() {
                 toastr.error( value );
             } );
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -202,7 +202,7 @@ function menuSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -210,7 +210,7 @@ function menuSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -234,7 +234,7 @@ function affiliateSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -242,7 +242,7 @@ function affiliateSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -365,7 +365,7 @@ function generalSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully. Redirecting...')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
             setTimeout( function () {
 				location.href = '/dashboard/admin/settings/general'
 			}, 1000 );
@@ -376,7 +376,7 @@ function generalSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -409,7 +409,7 @@ function invoiceSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -417,7 +417,7 @@ function invoiceSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -444,7 +444,7 @@ function stripeSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -452,7 +452,7 @@ function stripeSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -486,7 +486,7 @@ function openaiSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -494,7 +494,7 @@ function openaiSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -520,7 +520,7 @@ function stablediffusionSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -528,7 +528,7 @@ function stablediffusionSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -554,7 +554,7 @@ function unsplashSettingsSave() {
 	 	success: function ( data ) {
 	 		toastr.success('Settings saved succesfully')
 	 		document.getElementById( "settings_button" ).disabled = false;
-	 		document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+	 		document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 	 	},
 	 	error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -562,7 +562,7 @@ function unsplashSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -587,7 +587,7 @@ function ttsSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -595,7 +595,7 @@ function ttsSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -626,7 +626,7 @@ function smtpSettingsSave() {
         success: function ( data ) {
             toastr.success('Settings saved succesfully')
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         },
         error: function ( data ) {
             var err = data.responseJSON.errors;
@@ -634,7 +634,7 @@ function smtpSettingsSave() {
                 toastr.error( value );
             } );
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -660,7 +660,7 @@ function gdprSettingsSave() {
         success: function ( data ) {
             toastr.success('Settings saved succesfully')
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         },
         error: function ( data ) {
             var err = data.responseJSON.errors;
@@ -668,7 +668,7 @@ function gdprSettingsSave() {
                 toastr.error( value );
             } );
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -700,7 +700,7 @@ function privacySettingsSave() {
         success: function ( data ) {
             toastr.success('Settings saved succesfully')
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         },
         error: function ( data ) {
             var err = data.responseJSON.errors;
@@ -708,7 +708,7 @@ function privacySettingsSave() {
                 toastr.error( value );
             } );
             document.getElementById( "settings_button" ).disabled = false;
-            document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -743,7 +743,7 @@ function faqCreateOrUpdate(faq_id) {
                 toastr.error( value );
             } );
             document.getElementById( "faq_button" ).disabled = false;
-            document.getElementById( "faq_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "faq_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -770,7 +770,7 @@ function toolsCreateOrUpdate(item_id) {
         contentType: false,
         processData: false,
         success: function () {
-            toastr.success('Item saved succesfully. Redirecting')
+            toastr.success(magicai_localize.saved)
             setTimeout(function (){
                 location.href = "/dashboard/admin/frontend/tools"
             }, 750);
@@ -781,7 +781,7 @@ function toolsCreateOrUpdate(item_id) {
                 toastr.error( value );
             } );
             document.getElementById( "item_button" ).disabled = false;
-            document.getElementById( "item_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "item_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -806,7 +806,7 @@ function futureCreateOrUpdate(item_id) {
         contentType: false,
         processData: false,
         success: function () {
-            toastr.success('Item saved succesfully. Redirecting')
+            toastr.success(magical_localize.saved)
             setTimeout(function (){
                 location.href = "/dashboard/admin/frontend/future"
             }, 750);
@@ -817,7 +817,7 @@ function futureCreateOrUpdate(item_id) {
                 toastr.error( value );
             } );
             document.getElementById( "item_button" ).disabled = false;
-            document.getElementById( "item_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "item_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -842,7 +842,7 @@ function whoisCreateOrUpdate(item_id) {
         contentType: false,
         processData: false,
         success: function () {
-            toastr.success('Item saved succesfully. Redirecting')
+            toastr.success(magical_localize.saved)
             setTimeout(function (){
                 location.href = "/dashboard/admin/frontend/whois"
             }, 750);
@@ -853,7 +853,7 @@ function whoisCreateOrUpdate(item_id) {
                 toastr.error( value );
             } );
             document.getElementById( "item_button" ).disabled = false;
-            document.getElementById( "item_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "item_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -886,7 +886,7 @@ function generatorlistCreateOrUpdate(item_id) {
         contentType: false,
         processData: false,
         success: function () {
-            toastr.success('Item saved succesfully. Redirecting')
+            toastr.success(magical_localize.saved)
             setTimeout(function (){
                 location.href = "/dashboard/admin/frontend/generatorlist"
             }, 750);
@@ -897,7 +897,7 @@ function generatorlistCreateOrUpdate(item_id) {
                 toastr.error( value );
             } );
             document.getElementById( "item_button" ).disabled = false;
-            document.getElementById( "item_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+            document.getElementById( "item_button" ).innerHTML =  magicai_localize.save;
         }
     } );
     return false;
@@ -921,7 +921,7 @@ function imageStorageSettingsSave() {
 		success: function ( data ) {
 			toastr.success('Settings saved succesfully')
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -929,7 +929,7 @@ function imageStorageSettingsSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "settings_button" ).disabled = false;
-			document.getElementById( "settings_button" ).innerHTML = navigator.language == "en" ? "Save" : "حفظ";
+			document.getElementById( "settings_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;

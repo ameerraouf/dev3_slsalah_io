@@ -49,9 +49,9 @@ function userSave( user_id ) {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success('User saved succesfully')
+			toastr.success(magicai_localize.saved)
 			document.getElementById( "user_edit_button" ).disabled = false;
-			document.getElementById( "user_edit_button" ).innerHTML = "Save";
+			document.getElementById( "user_edit_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -59,7 +59,7 @@ function userSave( user_id ) {
 				toastr.error( value );
 			} );
 			document.getElementById( "user_edit_button" ).disabled = false;
-			document.getElementById( "user_edit_button" ).innerHTML = "Save";
+			document.getElementById( "user_edit_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;
@@ -95,9 +95,9 @@ function userProfileSave() {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success('User saved succesfully')
+			innerHTML =  magicai_localize.saved
 			document.getElementById( "user_edit_button" ).disabled = false;
-			document.getElementById( "user_edit_button" ).innerHTML = "Save";
+			document.getElementById( "user_edit_button" ).innerHTML =  magicai_localize.save;
 		},
 		error: function ( data ) {
 			var err = data.responseJSON.errors;
@@ -105,7 +105,7 @@ function userProfileSave() {
 				toastr.error( value );
 			} );
 			document.getElementById( "user_edit_button" ).disabled = false;
-			document.getElementById( "user_edit_button" ).innerHTML = "Save";
+			document.getElementById( "user_edit_button" ).innerHTML =  magicai_localize.save;
 		}
 	} );
 	return false;

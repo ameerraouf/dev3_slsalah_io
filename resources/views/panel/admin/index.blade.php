@@ -131,7 +131,7 @@
 							</div>
 							<div class="col">
 								<p class="font-weight-medium mb-1">
-									{{__('Words Generated')}}
+									{{__('Words')}}
 								</p>
 								<h3 class="text-[20px] mb-0 flex items-center">
                                     {{cache('words_this_week')}}
@@ -153,7 +153,7 @@
 							</div>
 							<div class="col">
 								<p class="font-weight-medium mb-1">
-									{{__('Images Generated')}}
+									{{__('Images')}}
 								</p>
 								<h3 class="text-[20px] mb-0 flex items-center">
                                     {{cache('images_this_week')}}
