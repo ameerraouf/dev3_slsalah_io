@@ -49,20 +49,7 @@ class AIController extends Controller
 
     public function buildOutput(Request $request)
     {
-        $this->validate($request, [
-            'number_of_results' => 'required',
-            'maximum_length' => 'required',
-            'language' => 'required',
-            'your_description' => 'required',
-            'article_title' => 'required',
-            'text_to_summary' => 'required',
-            'product_name' => 'required',
-            'seed_words' => 'required',
-            'subject' => 'required',
-            'description' => 'required',
-            'title' => 'required',
-            'keywords' => 'required',
-        ]);
+        
         $user = Auth::user();
 
         if ($request->post_type != 'ai_image_generator' && $user->remaining_words <= 0 && $user->remaining_words != -1) {
@@ -98,12 +85,21 @@ class AIController extends Controller
 
         //POST TITLE GENERATOR
         if ($post_type == 'post_title_generator') {
+            $this->validate($request, [
+                'number_of_results' => 'required', 
+                'language' => 'required',
+                'your_description' => 'required',
+            ]);
             $your_description = $request->your_description;
             $prompt = "Post title about $your_description in language $language .Generate $number_of_results post titles. Tone $tone_of_voice.";
         }
 
         //ARTICLE GENERATOR
         if ($post_type == 'article_generator') {
+            $this->validate($request, [
+                'article_title' => 'required', 
+                'keywords' => 'required',
+            ]);
             $article_title = $request->article_title;
             $focus_keywords = $request->focus_keywords;
             $prompt = "Generate article about $article_title. Focus on $focus_keywords. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different articles. Tone of voice must be $tone_of_voice";
@@ -111,6 +107,11 @@ class AIController extends Controller
 
         //SUMMARY GENERATOR SUMMARIZER SUMMARIZE TEXT
         if ($post_type == 'summarize_text') {
+            $this->validate($request, [
+
+                'text_to_summary' => 'required',
+
+            ]);
             $text_to_summary = $request->text_to_summary;
             $tone_of_voice = $request->tone_of_voice;
 
@@ -119,6 +120,11 @@ class AIController extends Controller
 
         //PRODUCT DESCRIPTION
         if ($post_type == 'product_description') {
+            $this->validate($request, [
+                'product_name' => 'required',
+                'description' => 'required',
+
+            ]);
             $product_name = $request->product_name;
             $description = $request->description;
 
@@ -127,6 +133,11 @@ class AIController extends Controller
 
         //PRODUCT NAME
         if ($post_type == 'product_name') {
+            $this->validate($request, [
+                'seed_words' => 'required',
+                'description' => 'required',
+
+            ]);
             $seed_words = $request->seed_words;
             $product_description = $request->product_description;
 
@@ -135,12 +146,18 @@ class AIController extends Controller
 
         //TESTIMONIAL REVIEW GENERATOR
         if ($post_type == 'testimonial_review') {
+            $this->validate($request, [
+                'subject' => 'required',
+            ]);
             $subject = $request->subject;
             $prompt = "Generate testimonial for $subject. Include details about how it helped you and what you like best about it. Be honest and specific, and feel free to get creative with your wording Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different testimonials. Tone of voice must be $tone_of_voice";
         }
 
         //PROBLEM AGITATE SOLUTION
         if ($post_type == 'problem_agitate_solution') {
+            $this->validate($request, [
+                'description' => 'required',
+            ]);
             $description = $request->description;
 
             $prompt = "Write Problem-Agitate-Solution copy for the $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. problem-agitate-solution. Tone of voice must be $tone_of_voice Generate $number_of_results different Problem-Afitate-Solution.";
@@ -148,6 +165,9 @@ class AIController extends Controller
 
         //BLOG SECTION
         if ($post_type == 'blog_section') {
+            $this->validate($request, [
+                'description' => 'required',
+            ]);
             $description = $request->description;
 
             $prompt = " Write me blog section about $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different blog sections. Tone of voice must be $tone_of_voice";
@@ -155,6 +175,11 @@ class AIController extends Controller
 
         //BLOG POST IDEAS
         if ($post_type == 'blog_post_ideas') {
+            $this->validate($request, [
+
+                'description' => 'required',
+
+            ]);
             $description = $request->description;
 
             $prompt = "Write blog post article ideas about $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different blog post ideas. Tone of voice must be $tone_of_voice";
@@ -162,31 +187,48 @@ class AIController extends Controller
 
         //BLOG INTROS
         if ($post_type == 'blog_intros') {
+            $this->validate($request, [
+                'description' => 'required',
+                'title' => 'required',
+            ]);
             $title = $request->title;
             $description = $request->description;
-
+            
             $prompt = "Write blog post intro about title: $title. And the description is $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different blog intros. Tone of voice must be $tone_of_voice";
         }
-
+        
         //BLOG CONCLUSION
         if ($post_type == 'blog_conclusion') {
+            $this->validate($request, [
+                'description' => 'required',
+                'title' => 'required',
+            ]);
             $title = $request->title;
             $description = $request->description;
-
+            
             $prompt = "Write blog post conclusion about title: $title. And the description is $description.Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different blog conclusions. Tone of voice must be $tone_of_voice";
         }
-
-
+        
+        
         //FACEBOOK ADS
         if ($post_type == 'facebook_ads') {
+            $this->validate($request, [
+                'description' => 'required',
+                'title' => 'required',
+            ]);
+            
             $title = $request->title;
             $description = $request->description;
-
+            
             $prompt = "Write facebook ads text about title: $title. And the description is $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different facebook ads text. Tone of voice must be $tone_of_voice";
         }
 
         //YOUTUBE VIDEO DESCRIPTION
         if ($post_type == 'youtube_video_description') {
+            $this->validate($request, [
+                
+                'title' => 'required',
+            ]);
             $title = $request->title;
 
             $prompt = "write youtube video description about $title. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different youtube video descriptions. Tone of voice must be $tone_of_voice";
@@ -194,6 +236,9 @@ class AIController extends Controller
 
         //YOUTUBE VIDEO TITLE
         if ($post_type == 'youtube_video_title') {
+            $this->validate($request, [
+                'description' => 'required',
+            ]);
             $description = $request->description;
 
             $prompt = "Craft captivating, attention-grabbing video titles about $description for YouTube rankings. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different youtube video titles. Tone of voice must be $tone_of_voice";
@@ -201,13 +246,23 @@ class AIController extends Controller
 
         //YOUTUBE VIDEO TAG
         if ($post_type == 'youtube_video_tag') {
-            $title = $request->title;
+            $this->validate($request, [
 
+                'title' => 'required',
+                
+            ]);
+            $title = $request->title;
+            
             $prompt = "Generate tags and keywords about $title for youtube video. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different youtube video tags. Tone of voice must be $tone_of_voice";
         }
-
+        
         //INSTAGRAM CAPTIONS
         if ($post_type == 'instagram_captions') {
+            $this->validate($request, [
+    
+                'title' => 'required',
+                
+            ]);
             $title = $request->title;
 
             $prompt = "Write instagram post caption about $title. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different instagram captions. Tone of voice must be $tone_of_voice";
@@ -215,6 +270,9 @@ class AIController extends Controller
 
         //INSTAGRAM HASHTAG
         if ($post_type == 'instagram_hashtag') {
+            $this->validate($request, [
+                'keywords' => 'required',
+            ]);
             $keywords = $request->keywords;
 
             $prompt = "Write instagram hastags for $keywords. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different instagram hashtags. Tone of voice must be $tone_of_voice";
@@ -222,6 +280,10 @@ class AIController extends Controller
 
         //SOCIAL MEDIA POST TWEET
         if ($post_type == 'social_media_post_tweet') {
+            $this->validate($request, [
+                'title' => 'required',
+                
+            ]);
             $title = $request->title;
 
             $prompt = "Write in 1st person tweet about $title. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different tweets. Tone of voice must be $tone_of_voice";
@@ -229,6 +291,11 @@ class AIController extends Controller
 
         //SOCIAL MEDIA POST BUSINESS
         if ($post_type == 'social_media_post_business') {
+            $this->validate($request, [
+                'company_name' => 'required',
+                'description' => 'required',
+
+            ]);
             $company_name = $request->company_name;
             $provide = $request->provide;
             $description = $request->description;
@@ -238,6 +305,12 @@ class AIController extends Controller
 
         //FACEBOOK HEADLINES
         if ($post_type == 'facebook_headlines') {
+            $this->validate($request, [
+
+                'description' => 'required',
+                'title' => 'required',
+                
+            ]);
             $title = $request->title;
             $description = $request->description;
 
@@ -246,15 +319,27 @@ class AIController extends Controller
 
         //GOOGLE ADS HEADLINES
         if ($post_type == 'google_ads_headlines') {
+            $this->validate($request, [
+
+                'product_name' => 'required',
+                'description' => 'required',
+
+            ]);
             $product_name = $request->product_name;
             $description = $request->description;
             $audience = $request->audience;
-
+            
             $prompt = "Write Google ads headline product name: $product_name. Description is $description. Audience is $audience. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different google ads headlines. Tone of voice must be $tone_of_voice";
         }
-
+        
         //GOOGLE ADS DESCRIPTION
         if ($post_type == 'google_ads_description') {
+            $this->validate($request, [
+    
+                'product_name' => 'required',
+                'description' => 'required',
+    
+            ]);
             $product_name = $request->product_name;
             $description = $request->description;
             $audience = $request->audience;
@@ -264,6 +349,10 @@ class AIController extends Controller
 
         //CONTENT REWRITE
         if ($post_type == 'content_rewrite') {
+            $this->validate($request, [
+          
+                'contents' => 'required',
+            ]);
             $contents = $request->contents;
 
             $prompt = "Rewrite content:  '$contents'. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different rewrited content. Tone of voice must be $tone_of_voice";
@@ -271,6 +360,10 @@ class AIController extends Controller
 
         //PARAGRAPH GENERATOR
         if ($post_type == 'paragraph_generator') {
+            $this->validate($request, [
+                'description' => 'required',
+                'keywords' => 'required',
+            ]);
             $description = $request->description;
             $keywords = $request->keywords;
 
@@ -279,6 +372,11 @@ class AIController extends Controller
 
         //Pros & Cons
         if ($post_type == 'pros_cons') {
+            $this->validate($request, [
+                'description' => 'required',
+                'title' => 'required',
+
+            ]);
             $title = $request->title;
             $description = $request->description;
 
@@ -287,6 +385,12 @@ class AIController extends Controller
 
         // META DESCRIPTION
         if ($post_type == 'meta_description') {
+            $this->validate($request, [
+
+                'description' => 'required',
+                'title' => 'required',
+                'keywords' => 'required',
+            ]);
             $title = $request->title;
             $description = $request->description;
             $keywords = $request->keywords;
@@ -296,6 +400,12 @@ class AIController extends Controller
 
         // FAQ Generator (All datas)
         if ($post_type == 'faq_generator') {
+            $this->validate($request, [
+
+                'description' => 'required',
+                'title' => 'required',
+                
+            ]);
             $title = $request->title;
             $description = $request->description;
 
@@ -304,6 +414,12 @@ class AIController extends Controller
 
         // Email Generator
         if ($post_type == 'email_generator') {
+            $this->validate($request, [
+ 
+                'subject' => 'required',
+                'description' => 'required',
+
+            ]);
             $subject = $request->subject;
             $description = $request->description;
 
@@ -312,6 +428,11 @@ class AIController extends Controller
 
         // Email Answer Generator
         if ($post_type == 'email_answer_generator') {
+            $this->validate($request, [
+
+                'description' => 'required',
+
+            ]);
             $description = $request->description;
 
             $prompt = "answer this email content: $description. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different email answers. Tone of voice must be $tone_of_voice";
@@ -319,6 +440,11 @@ class AIController extends Controller
 
         // Newsletter Generator
         if ($post_type == 'newsletter_generator') {
+            $this->validate($request, [
+                'subject' => 'required',
+                'description' => 'required',
+                'title' => 'required',
+            ]);
             $description = $request->description;
             $subject = $request->subject;
             $title = $request->title;
@@ -328,13 +454,26 @@ class AIController extends Controller
 
         // Grammar Correction
         if ($post_type == 'grammar_correction') {
+            
+            $this->validate($request, [
+      
+                'description' => 'required',
+              
+            ]);
+            
             $description = $request->description;
-
+            
             $prompt = "Correct this to standard $language. Text is '$description'. Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different grammar correction. Tone of voice must be $tone_of_voice";
         }
-
+        
         // TL;DR summarization
         if ($post_type == 'tldr_summarization') {
+            
+            $this->validate($request, [
+      
+                'description' => 'required',
+              
+            ]);
             $description = $request->description;
 
             $prompt = "$description. Tl;dr Maximum $maximum_length words. Creativity is $creativity between 0 and 1. Language is $language. Generate $number_of_results different tl;dr. Tone of voice must be $tone_of_voice";
@@ -353,6 +492,12 @@ class AIController extends Controller
         }
 
         if ($post_type == 'ai_code_generator') {
+
+            $this->validate($request, [
+        
+                'description' => 'required',
+ 
+            ]);
             $description = $request->description;
             $code_language = $request->code_language;
             $prompt = "Write a code about $description, in $code_language";
@@ -394,7 +539,7 @@ class AIController extends Controller
         $settings = $this->settings;
         $settings_two = $this->settings_two;
         $message_id = $request->message_id;
-        $message = UserOpenai::whereId($message_id)->first();
+        $message = UserOpenai::where('id', $request->message_id)->first();
         $prompt = $message->input;
 
         $creativity = $request->creativity;

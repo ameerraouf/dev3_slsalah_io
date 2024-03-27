@@ -203,7 +203,7 @@
                                         <option value="slow">{{ __('Slow') }}</option>
                                         <option value="medium" selected>{{ __('Medium') }}</option>
                                         <option value="fast">{{ __('Fast') }}</option>
-                                        <option value="x-fast">{{ __('Ultra Fast') }}</option>
+                                        <option value="x-fast">{{ __('Very Fast') }}</option>
                                     </select>
                                 </div>
                                 <div class="grow">

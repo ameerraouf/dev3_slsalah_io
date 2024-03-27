@@ -1819,19 +1819,19 @@
                     const selectedOptions_google = [
                         {
                             value: "x-slow",
-                            label: "Very Slow"
+                            label: {{__("Very Slow")}}
                         }, {
                             value: "slow",
-                            label: "Slow"
+                            label: {{__("Slow")}}
                         }, {
                             value: "medium",
-                            label: "Medium"
+                            label: {{__("Medium")}}
                         }, {
                             value: "fast",
-                            label: "Very Slow"
+                            label: {{__("Fast")}}
                         }, {
                             value: "x-fast",
-                            label: "Very Fast"
+                            label: {{__("Very Fast")}}
                         },
                     ];
 
