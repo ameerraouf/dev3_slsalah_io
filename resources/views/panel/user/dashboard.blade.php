@@ -61,7 +61,7 @@
                                             <p class="subheader">{{ __('Words Left') }}</p>
                                             <p class="mt-2 h1 text-[30px] font-semibold">
                                                 @if (Auth::user()->remaining_words == -1)
-                                                    Unlimited
+                                                    {{__('Unlimited')}}
                                                 @else
                                                     {{ number_format((int) Auth::user()->remaining_words) }}
                                                 @endif
@@ -73,7 +73,7 @@
                                                 <p class="subheader">{{ __('Images Left') }}</p>
                                                 <p class="mt-2 h1 text-[30px] font-semibold">
                                                     @if (Auth::user()->remaining_images == -1)
-                                                        Unlimited
+                                                    {{__('Unlimited')}}
                                                     @else
                                                         {{ number_format((int) Auth::user()->remaining_images) }}
                                                     @endif

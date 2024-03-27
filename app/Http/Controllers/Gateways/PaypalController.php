@@ -804,7 +804,7 @@ class PaypalController extends Controller
 
         $userId=$user->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
 
         if($activeSub != null){
             $plan = PaymentPlans::where('id', $activeSub->plan_id)->first();
@@ -845,7 +845,7 @@ class PaypalController extends Controller
         $provider = self::getPaypalProvider();
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $subscription = $provider->showSubscriptionDetails($activeSub->stripe_id);
             if(!isset($subscription['error'])){
@@ -876,7 +876,7 @@ class PaypalController extends Controller
         $provider = self::getPaypalProvider();
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $subscription = $provider->showSubscriptionDetails($activeSub->stripe_id);
             if(isset($subscription['error'])){
@@ -896,7 +896,7 @@ class PaypalController extends Controller
         $provider = self::getPaypalProvider();
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             return $provider->showSubscriptionDetails($activeSub->stripe_id);
         }
@@ -909,7 +909,7 @@ class PaypalController extends Controller
         $provider = self::getPaypalProvider();
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $subscription = $provider->showSubscriptionDetails($activeSub->stripe_id);
 
@@ -939,7 +939,7 @@ class PaypalController extends Controller
         $provider = self::getPaypalProvider();
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $subscription = $provider->showSubscriptionDetails($activeSub->stripe_id);
 

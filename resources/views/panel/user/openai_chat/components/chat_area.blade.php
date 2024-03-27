@@ -9,7 +9,7 @@
             <div
                 class="max-w-[calc(100%-64px)] border-none rounded-[2em] mb-[7px] bg-[#F3E2FD] text-[#090A0A] dark:bg-[rgba(var(--tblr-primary-rgb),0.3)] dark:text-white">
                 <div class="chat-content py-[0.75rem] px-[1.5rem]">
-                    {{ $message->input }}
+                    {{ __($message->input) }}
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div
                 class="chat-content-container max-w-[calc(100%-64px)] border-none rounded-[2em] mb-[7px] relative bg-[#E5E7EB] text-[#090A0A] dark:bg-[rgba(255,255,255,0.02)] dark:text-white group">
                 <pre
-                    class="chat-content py-[0.75rem] px-[1.5rem] bg-transparent text-inherit font-[inherit] text-[1em] indent-0 m-0 w-full whitespace-pre-wrap">{!! $message->output !!}</pre>
+                    class="chat-content py-[0.75rem] px-[1.5rem] bg-transparent text-inherit font-[inherit] text-[1em] indent-0 m-0 w-full whitespace-pre-wrap">{!! __($message->output) !!}</pre>
                 <button
                     class="lqd-clipboard-copy inline-flex items-center justify-center w-10 h-10 p-0 border-none absolute bottom-0 -end-5 bg-white rounded-full text-black !shadow-lg pointer-events-auto opacity-0 invisible transition-all hover:-translate-y-[2px] hover:scale-110 group-hover:!opacity-100 group-hover:!visible"
                     title="{{ __('Copy to clipboard') }}"

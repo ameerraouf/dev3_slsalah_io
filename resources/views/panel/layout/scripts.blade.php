@@ -15,6 +15,8 @@
 
 <script>
     var magicai_localize = {
+        words: @json(__('global.Words')),
+        images: @json(__('global.Images')),
         signup: @json(__('global.Sign Up')),
         save: @json(__('global.Save')),
         saved: @json(__('global.Saved')),

@@ -506,7 +506,7 @@ class AIWriterController extends Controller
         $planId = "";
 
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $planId = $activeSub->plan_id;
         }else{

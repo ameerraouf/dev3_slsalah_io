@@ -102,21 +102,21 @@
 								{{__('Human Name')}}
 								<x-info-tooltip text="{{__('Define a human name for the chatbot to give it more personality.')}}" />
 							</label>
-							<input type="text" class="form-control" id="human_name" placeholder="Allison Burgers" name="human_name" value="{{$template!=null ? $template->human_name : null}}">
+							<input type="text" class="form-control" id="human_name" placeholder="Allison Burgers" name="human_name" value="{{$template!=null ? __($template->human_name) : null}}">
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">
 								{{__('Template Role')}}
 								<x-info-tooltip text="{{__('A role for the chatbot that can define what it can help with. For example Finance Expert.')}}" />
 							</label>
-							<input type="text" class="form-control" id="role" name="role" placeholder="{{__('Finance Expert')}}" value="{{$template!=null ? $template->role : null}}">
+							<input type="text" class="form-control" id="role" name="role" placeholder="{{__('Finance Expert')}}" value="{{$template!=null ? __($template->role) : null}}">
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">
 								{{__('Helps With')}}
 								<x-info-tooltip text="{{__('Describe what this chatbot can help with. It shows when starting a conversation and the chatbot introducing itself.')}}" />
 							</label>
-							<textarea class="form-control" id="helps_with" placeholder="{{__('I can help you with managing your finance')}}" name="helps_with">{{$template!=null ? $template->helps_with : null}}</textarea>
+							<textarea class="form-control" id="helps_with" placeholder="{{__('I can help you with managing your finance')}}" name="helps_with">{{$template!=null ? __($template->helps_with) : null}}</textarea>
 						</div>
 						<div class="mb-[20px]">
 							<label class="form-label">

@@ -118,7 +118,7 @@ class AppController extends Controller
         $remaining_images = $user->remaining_images ?? 0;
 
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if($activeSub != null){
             $paid_with = $activeSub->paid_with;
             $planId = $activeSub->plan_id;

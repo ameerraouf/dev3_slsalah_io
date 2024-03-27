@@ -47,7 +47,7 @@
                                             </select> --}}
 
                                             <label class="form-check form-switch ps-0">
-                                                <span class="form-check-label ms-0 me-2">{{ __('Adsense Status') }}</span>
+                                                <span class="form-check-label ms-0 me-2">{{ __('Adsense Status') }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <input class="form-check-input"  name="status" type="checkbox" id="hosting_type" {{ $id->status == true ? 'checked' : '' }}>
                                             </label>
                                         </div> 							

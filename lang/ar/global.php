@@ -35,4 +35,6 @@ return [
     'You cannot withdrawal with this amount. Please check'=>'لا يمكنك السحب بهذا المبلغ. يرجى المراجعة',
     'Error while sending information. Please contact us.'=>'حدث خطأ أثناء إرسال المعلومات. الرجاء التواصل معنا.',
     'Please input topic'=>'الرجاء إدخال الموضوع',
+    'Words'=>'الكلمات',
+    'Images'=>'الصور',
 ];

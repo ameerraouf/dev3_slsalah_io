@@ -453,10 +453,10 @@
 
 		var dailyUsageChartOptions = {
 		series: [{
-			name: 'Words',
+			name: magicai_localize.words,
 			data: [@foreach(json_decode(cache('daily_usages')) as $dailySales) '{{(int)$dailySales->sumsWord}}',@endforeach]
 		}, {
-			name: 'Images',
+			name: magicai_localize.images,
 			data: [@foreach(json_decode(cache('daily_usages')) as $dailySales) '{{(int)$dailySales->sumsImage}}',@endforeach]
 		}],
 		colors: ['var(--tblr-primary)', 'rgba(var(--tblr-primary-rgb),0.15)'],

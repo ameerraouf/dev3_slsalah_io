@@ -631,7 +631,7 @@ class PaystackController extends Controller
         $user = Auth::user();
         $userId=$user->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
 
         if($activeSub != null){
 
@@ -822,7 +822,7 @@ class PaystackController extends Controller
 
         // $userId=Auth::user()->id;
         // // Get current active subscription
-        // $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        // $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
         // if($activeSub != null){
         //     $reqs = self::curl_req_get(self::$subscription_endpoint. "/" .$activeSub->stripe_id , $key);
         //     if($reqs['status'] == false){ # if something went wrong with the request
@@ -846,7 +846,7 @@ class PaystackController extends Controller
 
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
         if($activeSub != null){
             $reqs = self::curl_req_get(self::$subscription_endpoint. "/" .$activeSub->stripe_id , $key);
             if($reqs['status'] == false){ # if something went wrong with the request
@@ -874,7 +874,7 @@ class PaystackController extends Controller
 
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
         if($activeSub != null){
             $reqs = self::curl_req_get(self::$subscription_endpoint. "/" .$activeSub->stripe_id , $key);
             if($reqs['status'] == false){ # if something went wrong with the request
@@ -910,7 +910,7 @@ class PaystackController extends Controller
 
         $userId=Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
         if($activeSub != null){
             $reqs = self::curl_req_get(self::$subscription_endpoint. "/" .$activeSub->stripe_id , $key);
             if($reqs['status'] == false){ # if something went wrong with the request
@@ -943,7 +943,7 @@ class PaystackController extends Controller
 
         // $userId=Auth::user()->id;
         // // Get current active subscription
-        // $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
+        // $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId], ['paid_with', '=', 'paystack']])->first();
         // if($activeSub != null){
         //     $reqs = self::curl_req_get(self::$subscription_endpoint. "/" .$activeSub->stripe_id , $key);
         //     if($reqs['status'] == false){ # if something went wrong with the request

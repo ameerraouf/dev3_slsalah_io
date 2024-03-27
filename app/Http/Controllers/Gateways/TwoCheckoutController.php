@@ -262,7 +262,7 @@ class TwoCheckoutController extends Controller
         }
 
         // $currency = Currency::where('id', $gateway->currency)->first()->code;
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'],['user_id','=', $user->id]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'],['user_id','=', $user->id]])->first();
         if ($activeSub != null) {
             $plan = PaymentPlans::where('id', $activeSub->plan_id)->first();
             $client = self::getRequestHeader();
@@ -646,7 +646,7 @@ class TwoCheckoutController extends Controller
         // }
 
         // $currency = Currency::where('id', $gateway->currency)->first()->code;
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $user->id]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $user->id]])->first();
         if ($activeSub->stripe_status == 'active') {
             return Carbon::now()->diffInDays(Carbon::createFromDate($activeSub->updated_at)->addMonth());
         } else {
@@ -704,7 +704,7 @@ class TwoCheckoutController extends Controller
         }
 
         $currency = Currency::where('id', $gateway->currency)->first()->code;
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $user->id]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $user->id]])->first();
 
         if($activeSub != null){
             if ($activeSub['stripe_status'] == 'active'){

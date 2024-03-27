@@ -35,5 +35,7 @@ return [
     'Request Sent Succesfully' => 'Request Sent Succesfully',
     'Invitation Sent Succesfully' => 'Invitation Sent Succesfully',
     'Error while sending information. Please contact us.'=>'Error while sending information. Please contact us.',
-    'Please input topic' => 'Please input topic'
+    'Please input topic' => 'Please input topic',
+    'Words'=>'Words',
+    'Images'=>'Images',
 ];

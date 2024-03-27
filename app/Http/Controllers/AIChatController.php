@@ -71,7 +71,7 @@ class AIChatController extends Controller
         $isPaid = false;
         $userId = Auth::user()->id;
         // Get current active subscription
-        $activeSub = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+        $activeSub = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
         if ($activeSub != null) {
             switch ($activeSub->paid_with) {
                 case 'stripe':
@@ -233,7 +233,7 @@ class AIChatController extends Controller
             // $subscribed = $user->subscriptions()->where('stripe_status', 'active')->orWhere('stripe_status', 'trialing')->first();
             $userId = $user->id;
             // Get current active subscription
-            $subscribed = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+            $subscribed = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
             if ($subscribed != null) {
                 $subscription = PaymentPlans::where('id', $subscribed->name)->first();
                 if ($subscription != null) {

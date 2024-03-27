@@ -412,7 +412,7 @@ class AIChatController extends Controller
             // return response()->json($user);
 
             $userId = $user->id;
-            $subscribed = SubscriptionsModel::where([['stripe_status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['stripe_status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
+            $subscribed = SubscriptionsModel::where([['status', '=', 'active'], ['user_id', '=', $userId]])->orWhere([['status', '=', 'trialing'], ['user_id', '=', $userId]])->first();
             if ($subscribed != null) {
                 $subscription = PaymentPlans::where('id', $subscribed->name)->first();
                 if ($subscription != null) {
