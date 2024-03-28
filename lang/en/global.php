@@ -38,4 +38,5 @@ return [
     'Please input topic' => 'Please input topic',
     'Words'=>'Words',
     'Images'=>'Images',
+    'Error updating folder name' => 'Error updating folder name'
 ];

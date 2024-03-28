@@ -103,7 +103,7 @@
                                 </td>
                                 <td class="sort-file" data-file="{{trim($entry->generator->title)}}">
                                     <span id="file{{$entry->slug}}"  class="inline-block !py-[0.15em] !px-1 rounded-md text-[12px] font-medium text-black relative" style="background: {{$entry->generator->color}}">
-                                        {{$entry->generator->title}}
+                                        {{ __($entry->generator->title) }}
 										<a href="{{ LaravelLocalization::localizeUrl( route('dashboard.user.openai.documents.single', $entry->slug)) }}" class="absolute top-0 left-0 w-full h-full z-[2] hidden max-md:block" title="{{__('View and edit')}}"></a>
                                     </span>
                                 </td>
@@ -124,7 +124,7 @@
                                             </svg>
                                             @endif
                                         </a>
-                                        <a href="{{ LaravelLocalization::localizeUrl( route('dashboard.user.openai.documents.delete', $entry->slug)) }}" onclick="return confirm('Are you sure?')" class="btn relative z-10 p-0 border w-[36px] shrink-0 h-[36px] hover:bg-red-600 hover:text-white" title="{{__('Delete')}}">
+                                        <a href="{{ LaravelLocalization::localizeUrl( route('dashboard.user.openai.documents.delete', $entry->slug)) }}" onclick="return confirm('{{__('Are you sure? This is permanent.')}}')" class="btn relative z-10 p-0 border w-[36px] shrink-0 h-[36px] hover:bg-red-600 hover:text-white" title="{{__('Delete')}}">
                                             <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.08789 1.74609L5.80664 5L9.08789 8.25391L8.26758 9.07422L4.98633 5.82031L1.73242 9.07422L0.912109 8.25391L4.16602 5L0.912109 1.74609L1.73242 0.925781L4.98633 4.17969L8.26758 0.925781L9.08789 1.74609Z"/>
                                             </svg>

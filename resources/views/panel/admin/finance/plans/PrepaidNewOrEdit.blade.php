@@ -89,7 +89,7 @@
 													<x-info-tooltip text="{{__('ON to display (0) word count in plans')}}" />
 												</label>
 											</div>
-											<input type="number" min="0" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
+											<input type="number" name="total_words" id="total_words" class="form-control"  value="{{isset($subscription) ? $subscription->total_words : null}}"/>
 										</div>
 									</div>
 									<div class="col-md-6">

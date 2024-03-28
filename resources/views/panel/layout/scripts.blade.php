@@ -19,6 +19,7 @@
         images: @json(__('global.Images')),
         signup: @json(__('global.Sign Up')),
         save: @json(__('global.Save')),
+        fname: @json(__('global.Error updating folder name')),
         saved: @json(__('global.Saved')),
         send: @json(__('global.Send')),
         requestsent: @json(__('global.Request Sent Succesfully')),

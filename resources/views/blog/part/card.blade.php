@@ -6,7 +6,7 @@
     </figure>
     <div class="p-5 min-h-[180px] flex flex-col font-medium">
         <div class="flex justify-between space-x-6 mb-3 text-black">
-            <time datetime="{{$post->updated_at}}" class="text-sm">{{date("d M", strtotime($post->updated_at))}}</time>
+            <time datetime="{{$post->updated_at->locale('ar-SA')}}" class="text-sm">{{date("d M", strtotime($post->updated_at->locale('ar-AE')))}}</time>
             <div class="border-b grow relative -top-2"></div>
             <a class="text-sm" href="{{ url('/blog/author', $post->user_id) }}">{{App\Models\User::where('id', $post->user_id)->first()->name;}}</a>
         </div>

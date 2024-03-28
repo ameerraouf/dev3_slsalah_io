@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'Workbook')
+@section('title', __('Workbook'))
 
 @section('content')
     <div class="page-header">

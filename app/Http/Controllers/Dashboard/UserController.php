@@ -438,7 +438,7 @@ class UserController extends Controller
         $workbook = UserOpenai::where('slug', $fileSlug)->first();
         $workbook->folder_id =$folderID;
         $workbook->save();
-        return back()->with(['message' => 'Moved successfuly', 'type' => 'success']);
+        return back()->with(['message' => __('Moved successfuly'), 'type' => 'success']);
     }
 
     

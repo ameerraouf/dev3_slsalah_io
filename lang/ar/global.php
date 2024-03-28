@@ -37,4 +37,5 @@ return [
     'Please input topic'=>'الرجاء إدخال الموضوع',
     'Words'=>'الكلمات',
     'Images'=>'الصور',
+    'Error updating folder name' => "خطأ في تحديث اسم المجلد"
 ];

@@ -1,5 +1,5 @@
 @extends('panel.layout.app')
-@section('title', 'My Documents')
+@section('title', __('My Documents'))
 
 @section('content')
     <div class="page-header">
@@ -381,7 +381,7 @@
                     $('#renameFileModal').modal('hide');
                 },
                 error: function(error) {
-                    toastr.error("{{ __('Error updating folder name:') }}", error);
+                    toastr.error(magicai_localize.fname, error);
                 }
             });
         }
@@ -408,7 +408,7 @@
                     $('#renameModal').modal('hide');
                 },
                 error: function(error) {
-                    toastr.error("{{ __('Error updating folder name:') }}", error);
+                    toastr.error(magicai_localize.fname, error);
                 }
             });
         }

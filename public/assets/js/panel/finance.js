@@ -40,7 +40,7 @@ function prepaidSave( plan_id ) {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success('Plan Saved Succesfully. Redirecting...')
+			toastr.success(magicai_localize.saved)
 			setTimeout( function () {
 				location.href = '/dashboard/admin/finance/plans'
 			}, 1000 );
@@ -52,7 +52,7 @@ function prepaidSave( plan_id ) {
 				toastr.error( value );
 			} );
 			document.getElementById( "item_edit_button" ).disabled = false;
-			document.getElementById( "item_edit_button" ).innerHTML = "Save";
+			document.getElementById( "item_edit_button" ).innerHTML = magicai_localize.save;
 		}
 	} );
 	return false;
@@ -110,7 +110,7 @@ function subscriptionSave( plan_id ) {
 		contentType: false,
 		processData: false,
 		success: function ( data ) {
-			toastr.success('Plan Saved Succesfully. Redirecting...')
+			toastr.success(magicai_localize.saved)
 			setTimeout( function () {
 				location.href = '/dashboard/admin/finance/plans'
 			}, 1000 );
@@ -122,7 +122,7 @@ function subscriptionSave( plan_id ) {
 				toastr.error( value );
 			} );
 			document.getElementById( "item_edit_button" ).disabled = false;
-			document.getElementById( "item_edit_button" ).innerHTML = "Save";
+			document.getElementById( "item_edit_button" ).innerHTML = magicai_localize.save;
 		}
 	} );
 	return false;
